@@ -234,6 +234,14 @@ class UserController extends AdminController {
                 if(!M('Member')->add($user)){
                     $this->error('用户添加失败！');
                 } else {
+                    // 添加到用户组
+                    // group=2 注册用户分组
+                    $AuthGroup = D('AuthGroup');
+                    $AuthGroup->addToGroup($uid,2);
+                    //记录行为
+                    action_log('add_user', 'member', $uid, UID);
+                    // 生成用户的顶层关系网络 网站管理员是可以手动设置的,这里是自动设置
+                    M('MemberSuperior')->add(array("uid" => $uid,"create_time" => NOW_TIME,"update_time"=>NOW_TIME));
                     $this->success('用户添加成功！',U('index'));
                 }
             } else { //注册失败，显示错误信息
@@ -245,6 +253,20 @@ class UserController extends AdminController {
             $data['contacted'] = 0;
             $data['bdirection'] = 1;
             $this->assign('data',$data);
+            $this->display();
+        }
+    }
+
+    public function editsuperior(){
+        if(IS_POST){
+            $data = $_POST;
+            $data["update_time"] = NOW_TIME;
+            M("MemberSuperior")->save($data);
+            $this->success('更新成功！',U('index'));
+        }else{
+            $uid = (int)$_GET['uid'];
+            $data = M("MemberSuperior")->where("uid={$uid}")->find();
+            $this->assign("user_superior",$data);
             $this->display();
         }
     }

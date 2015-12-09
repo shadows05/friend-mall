@@ -85,68 +85,61 @@
             
 
             
-	<!-- 标题栏 -->
-	<div class="main-title">
-		<h2>用户列表</h2>
+	<div class="main-title cf">
+		<h2>查看行为日志</h2>
 	</div>
-	<div class="cf">
-		<div class="fl">
-            <a class="btn" href="<?php echo U('User/add');?>">新 增</a>
-            <button class="btn ajax-post" url="<?php echo U('User/changeStatus',array('method'=>'resumeUser'));?>" target-form="ids">启 用</button>
-            <button class="btn ajax-post" url="<?php echo U('User/changeStatus',array('method'=>'forbidUser'));?>" target-form="ids">禁 用</button>
-            <button class="btn ajax-post confirm" url="<?php echo U('User/changeStatus',array('method'=>'deleteUser'));?>" target-form="ids">删 除</button>
-        </div>
 
-        <!-- 高级搜索 -->
-		<div class="search-form fr cf">
-			<div class="sleft">
-				<input type="text" name="nickname" class="search-input" value="<?php echo I('nickname');?>" placeholder="请输入用户昵称或者ID">
-				<a class="sch-btn" href="javascript:;" id="search" url="<?php echo U('index');?>"><i class="btn-search"></i></a>
-			</div>
+	<!-- 标签页导航 -->
+	<div class="tab-wrap">
+		<div class="tab-content">
+			<!-- 表单 -->
+			<form id="form" method="post" class="form-horizontal doc-modal-form">
+				<!-- 基础 -->
+				<div id="tab1" class="tab-pane in tab1">
+					<div class="form-item cf">
+						<label class="item-label">行为名称</label>
+						<div class="controls">
+							<span><?php echo get_action($info['action_id'], "title");?></span>
+						</div>
+					</div>
+					<div class="form-item cf">
+						<label class="item-label">执行者</label>
+						<div class="controls">
+							<span><?php echo get_nickname($info['user_id']);?></span>
+						</div>
+					</div>
+					<div class="form-item cf">
+						<label class="item-label">执行IP</label>
+						<div class="controls">
+							<span><?php echo long2ip($info['action_ip']);?></span>
+						</div>
+					</div>
+					<div class="form-item cf">
+						<label class="item-label">执行时间</label>
+						<div class="controls">
+							<span><?php echo date('Y-m-d H:i:s',$info['create_time']);?></span>
+						</div>
+					</div>
+					<div class="form-item cf">
+						<label class="item-label">备注</label>
+						<div class="controls">
+							<label class="textarea input-large">
+								<textarea readonly="readonly"><?php echo ($info["remark"]); ?></textarea>
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<!-- 按钮 -->
+				<div class="form-item cf">
+					<label class="item-label"></label>
+					<div class="controls edit_sort_btn">
+						<button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+					</div>
+				</div>
+			</form>
 		</div>
-    </div>
-    <!-- 数据列表 -->
-    <div class="data-table table-striped">
-	<table class="">
-    <thead>
-        <tr>
-		<th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
-		<th class="">UID</th>
-		<th class="">昵称</th>
-		<th class="">积分</th>
-		<th class="">登录次数</th>
-		<th class="">最后登录时间</th>
-		<th class="">最后登录IP</th>
-		<th class="">状态</th>
-		<th class="">操作</th>
-		</tr>
-    </thead>
-    <tbody>
-		<?php if(!empty($_list)): if(is_array($_list)): $i = 0; $__LIST__ = $_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-            <td><input class="ids" type="checkbox" name="id[]" value="<?php echo ($vo["uid"]); ?>" /></td>
-			<td><?php echo ($vo["uid"]); ?> </td>
-			<td><?php echo ($vo["nickname"]); ?></td>
-			<td><?php echo ($vo["score"]); ?></td>
-			<td><?php echo ($vo["login"]); ?></td>
-			<td><span><?php echo (time_format($vo["last_login_time"])); ?></span></td>
-			<td><span><?php echo long2ip($vo['last_login_ip']);?></span></td>
-			<td><?php echo ($vo["status_text"]); ?></td>
-			<td>
-				<a href="<?php echo U('User/editsuperior&uid='.$vo['uid']);?>">更新用户上级</a>
-				<?php if(($vo["status"]) == "1"): ?><a href="<?php echo U('User/changeStatus?method=forbidUser&id='.$vo['uid']);?>" class="ajax-get">禁用</a>
-				<?php else: ?>
-				<a href="<?php echo U('User/changeStatus?method=resumeUser&id='.$vo['uid']);?>" class="ajax-get">启用</a><?php endif; ?>
-				<a href="<?php echo U('AuthManager/group?uid='.$vo['uid']);?>" class="confirm ajax-get">删除</a>
-                </td>
-		</tr><?php endforeach; endif; else: echo "" ;endif; ?>
-		<?php else: ?>
-		<td colspan="9" class="text-center"> aOh! 暂时还没有内容! </td><?php endif; ?>
-	</tbody>
-    </table>
 	</div>
-    <div class="page">
-        <?php echo ($_page); ?>
-    </div>
 
         </div>
         <div class="cont-ft">
@@ -241,32 +234,50 @@
         }();
     </script>
     
-	<script src="/friend-mall/Public/static/thinkbox/jquery.thinkbox.js"></script>
+<script type="text/javascript" src="/friend-mall/Public/static/jquery.dragsort-0.5.1.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+Think.setValue("extend", <?php echo ((isset($info["extend"]) && ($info["extend"] !== ""))?($info["extend"]):0); ?>);
+//导航高亮
+highlight_subnav('<?php echo U('Action/actionlog');?>');
 
-	<script type="text/javascript">
-	//搜索功能
-	$("#search").click(function(){
-		var url = $(this).attr('url');
-        var query  = $('.search-form').find('input').serialize();
-        query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
-        query = query.replace(/^&/g,'');
-        if( url.indexOf('?')>0 ){
-            url += '&' + query;
-        }else{
-            url += '?' + query;
-        }
-		window.location.href = url;
+
+$(function(){
+	showTab();
+})
+//拖曳插件初始化
+$(function(){
+	$(".dragsort").dragsort({
+	     dragSelector:'li',
+	     placeHolderTemplate: '<li class="draging-place">&nbsp;</li>',
+	     dragBetween:true,	//允许拖动到任意地方
+	     dragEnd:function(){
+	    	 var self = $(this);
+	    	 self.find('input').attr('name', 'field_sort[' + self.closest('ul').data('group') + '][]');
+	     	//updateVal();
+	     }
+	 });
+
+	$('#sortUl li b').click(function(){
+		$(this).parent().remove();
+		updateVal();
 	});
-	//回车搜索
-	$(".search-input").keyup(function(e){
-		if(e.keyCode === 13){
-			$("#search").click();
-			return false;
-		}
-	});
-    //导航高亮
-    highlight_subnav('<?php echo U('User/index');?>');
-	</script>
+
+	// 更新排序后的隐藏域的值
+	function updateVal() {
+		var fields = new Array();
+		$('.form_field_sort').each(function(){
+			var i = 1;
+			var self = this;
+			var group = $(self).attr('group');
+			$(self).find('li').each(function(){
+		   		var id = $(this).find('em').attr('data');
+		   		$('#field-' + id).val(id + ':' + group + ':' + i++);
+		   	});
+		});
+
+	}
+})
+</script>
 
 </body>
 </html>

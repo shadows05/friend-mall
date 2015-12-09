@@ -98,7 +98,7 @@
         <div class="search-form fr cf">
             <div class="sleft">
                 <input type="text" name="title" class="search-input" value="<?php echo I('title');?>" placeholder="请输入菜单名称">
-                <a class="sch-btn" href="javascript:;" id="search" url="/friend-mall/index.php?s=/admin/menu/index.html"><i class="btn-search"></i></a>
+                <a class="sch-btn" href="javascript:;" id="search" url="/friend-mall/index.php?s=/Admin/Menu/index/pid/68.html"><i class="btn-search"></i></a>
             </div>
         </div>
     </div>
