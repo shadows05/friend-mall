@@ -6196,3 +6196,127 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
 
+[ 2015-12-09T18:19:17+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/Article/mydocument.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%Article/mydocument%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.007000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 2 )  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 2 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\EasyPHP-DevServer-14.1VC11\data\localweb\friend-mall\Application\Admin\Controller\AdminController.class.php 第 294 行.
+SQL: SHOW COLUMNS FROM `friend_auth_group_access` [ RunTime:0.007000s ]
+SQL: SELECT `extend_id` FROM friend_auth_group_access g INNER JOIN friend_auth_extend c on g.group_id=c.group_id  WHERE ( g.uid='20013' and c.type='1' and !isnull(extend_id) )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `friend_category` [ RunTime:0.010000s ]
+SQL: SELECT `id`,`title`,`pid`,`allow_publish` FROM `friend_category` WHERE ( `status` = 1 ) ORDER BY pid,sort  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `friend_document` [ RunTime:0.007000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `friend_document` WHERE ( `status` IN ('0','1','2') ) AND ( `uid` = 20013 ) AND ( `pid` = 0 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `friend_document` WHERE ( `status` IN ('0','1','2') ) AND ( `uid` = 20013 ) AND ( `pid` = 0 ) ORDER BY update_time desc LIMIT 0,10   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.104000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.104000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-12-09T18:19:18+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/Config/group.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%Config/group%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.008000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 68 )  [ RunTime:0.001000s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '系统设置' ) AND ( `url` IN ('Model/index','Config/group','Config/index','Menu/index','Channel/index','Category/index','Database/index?type=export') ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '' ) AND ( `url` IN ('Model/index','Config/group','Config/index','Menu/index','Channel/index','Category/index','Database/index?type=export') ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '数据备份' ) AND ( `url` IN ('Model/index','Config/group','Config/index','Menu/index','Channel/index','Category/index','Database/index?type=export') ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `friend_config` [ RunTime:0.010000s ]
+SQL: SELECT `id`,`name`,`title`,`extra`,`value`,`remark`,`type` FROM `friend_config` WHERE ( `status` = 1 ) AND ( `group` = 1 ) ORDER BY sort  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.061000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2015-12-09T18:19:23+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/Index/index.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.001000s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%Index/index%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.007000s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 1 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 1 ) AND ( `hide` = 0 )  [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\EasyPHP-DevServer-14.1VC11\data\localweb\friend-mall\Application\Admin\Controller\AdminController.class.php 第 294 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ AdminIndex ] --START--
+SQL: SHOW COLUMNS FROM `friend_addons` [ RunTime:0.008000s ]
+SQL: SELECT `config` FROM `friend_addons` WHERE ( `name` = 'SiteStat' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `friend_member` [ RunTime:0.008000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `friend_member` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `friend_action_log` [ RunTime:0.007000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `friend_action_log` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `friend_document` [ RunTime:0.008000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `friend_document` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `friend_category` [ RunTime:0.011000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `friend_category` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `friend_model` [ RunTime:0.007000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `friend_model` LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.090000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run SiteStat [ RunTime:0.086000s ]
+SQL: SELECT `config` FROM `friend_addons` WHERE ( `name` = 'SystemInfo' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-4.364000s ]
+SQL: select version() as v; [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-4.264000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-4.274000s ]
+INFO: Run SystemInfo [ RunTime:4.275000s ]
+SQL: SELECT `config` FROM `friend_addons` WHERE ( `name` = 'DevTeam' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-4.391000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-4.293000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-4.299000s ]
+INFO: Run DevTeam [ RunTime:0.025000s ]
+INFO: [ AdminIndex ] --END-- [ RunTime:4.386000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-4.293000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-4.300000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
