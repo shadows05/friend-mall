@@ -1,0 +1,708 @@
+[ 2015-12-10T00:09:09+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/User/add.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.005669s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000695s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%User/add%' ) LIMIT 1   [ RunTime:0.000463s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004194s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=18 ) LIMIT 1   [ RunTime:0.000369s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=17 ) LIMIT 1   [ RunTime:0.000275s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=16 ) LIMIT 1   [ RunTime:0.000265s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 16 )  [ RunTime:0.000559s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 16 ) AND ( `hide` = 0 )  [ RunTime:0.000995s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '用户管理' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000634s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '行为管理' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000490s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000381s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000358s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000759s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.045076s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045445s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000756s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001109s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.003660s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004340s ]
+
+[ 2015-12-10T00:11:35+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/Config/group.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.006174s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000889s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%Config/group%' ) LIMIT 1   [ RunTime:0.000509s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004265s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000499s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 68 )  [ RunTime:0.000746s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000407s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000487s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000561s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000564s ]
+SQL: SHOW COLUMNS FROM `friend_config` [ RunTime:0.005534s ]
+SQL: SELECT `id`,`name`,`title`,`extra`,`value`,`remark`,`type` FROM `friend_config` WHERE ( `status` = 1 ) AND ( `group` = 1 ) ORDER BY sort  [ RunTime:0.000692s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000322s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000709s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.059924s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.060287s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000761s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001111s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001190s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001651s ]
+
+[ 2015-12-10T00:11:37+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/Menu/index.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004341s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000601s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%Menu/index%' ) LIMIT 1   [ RunTime:0.000489s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004189s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=75 ) LIMIT 1   [ RunTime:0.000440s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000588s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 68 )  [ RunTime:0.000705s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000389s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000462s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000385s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000409s ]
+SQL: SELECT `id`,`title` FROM `friend_menu`  [ RunTime:0.000741s ]
+SQL: SELECT `id`,`title`,`pid`,`sort`,`url`,`hide`,`tip`,`group`,`is_dev` FROM `friend_menu` WHERE ( `pid` = 0 ) ORDER BY sort asc,id asc  [ RunTime:0.000508s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000345s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000723s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.064239s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.064627s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001008s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001819s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001562s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002123s ]
+
+[ 2015-12-10T00:11:44+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/Menu/add/pid/0.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004414s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000565s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%Menu/add%' ) LIMIT 1   [ RunTime:0.000492s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004783s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=96 ) LIMIT 1   [ RunTime:0.000358s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=75 ) LIMIT 1   [ RunTime:0.000260s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000253s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 68 )  [ RunTime:0.000538s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000382s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000464s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000402s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000435s ]
+SQL: SELECT `id`,`title`,`pid`,`sort`,`url`,`hide`,`tip`,`group`,`is_dev` FROM `friend_menu`  [ RunTime:0.000813s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000385s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000819s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.044859s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045263s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000991s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001423s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001425s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002082s ]
+
+[ 2015-12-10T00:12:48+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/Menu/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000622s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001254s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004289s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000596s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%Menu/add%' ) LIMIT 1   [ RunTime:0.000607s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.005124s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=96 ) LIMIT 1   [ RunTime:0.000600s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=75 ) LIMIT 1   [ RunTime:0.000489s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000501s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 68 )  [ RunTime:0.000604s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000527s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000564s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000661s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000660s ]
+SQL: INSERT INTO `friend_menu` (`title`,`sort`,`url`,`pid`,`group`,`hide`,`is_dev`,`tip`,`id`) VALUES ('会员管理',0,'Admin/membership',0,'',0,0,'会员管理',0) [ RunTime:0.000950s ]
+SQL: SHOW COLUMNS FROM `friend_action` [ RunTime:0.004376s ]
+SQL: SELECT * FROM `friend_action` WHERE ( `name` = 'update_menu' ) LIMIT 1   [ RunTime:0.000407s ]
+SQL: SHOW COLUMNS FROM `friend_action_log` [ RunTime:0.004976s ]
+SQL: INSERT INTO `friend_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (10,1,2130706433,'Menu',123,1449677568,'操作url：/friend-mall/index.php?s=/Admin/Menu/add.html') [ RunTime:0.000603s ]
+
+[ 2015-12-10T00:12:50+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/Menu/index.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004187s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000606s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%Menu/index%' ) LIMIT 1   [ RunTime:0.000438s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004024s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=75 ) LIMIT 1   [ RunTime:0.000367s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000372s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 68 )  [ RunTime:0.000854s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000558s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000514s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000459s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000605s ]
+SQL: SELECT `id`,`title` FROM `friend_menu`  [ RunTime:0.000611s ]
+SQL: SELECT `id`,`title`,`pid`,`sort`,`url`,`hide`,`tip`,`group`,`is_dev` FROM `friend_menu` WHERE ( `pid` = 0 ) ORDER BY sort asc,id asc  [ RunTime:0.000526s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000536s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001252s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.069962s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.070439s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000808s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001152s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001444s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003238s ]
+
+[ 2015-12-10T00:12:57+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/Menu/index/pid/2.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004796s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000662s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%Menu/index%' ) LIMIT 1   [ RunTime:0.000518s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004401s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=75 ) LIMIT 1   [ RunTime:0.000437s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000400s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 68 )  [ RunTime:0.000677s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000461s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000551s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000441s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000606s ]
+SQL: SELECT `id`,`title`,`pid`,`sort`,`url`,`hide`,`tip`,`group`,`is_dev` FROM `friend_menu` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.000479s ]
+SQL: SELECT `id`,`title` FROM `friend_menu`  [ RunTime:0.000772s ]
+SQL: SELECT `id`,`title`,`pid`,`sort`,`url`,`hide`,`tip`,`group`,`is_dev` FROM `friend_menu` WHERE ( `pid` = 2 ) ORDER BY sort asc,id asc  [ RunTime:0.001749s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000348s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000735s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.054270s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054653s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000773s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001108s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001233s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001805s ]
+
+[ 2015-12-10T00:13:01+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/Menu/edit/id/2.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004077s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000674s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%Menu/edit%' ) LIMIT 1   [ RunTime:0.000444s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.005079s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=98 ) LIMIT 1   [ RunTime:0.000483s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=75 ) LIMIT 1   [ RunTime:0.000404s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000369s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 68 )  [ RunTime:0.000761s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000493s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000727s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000526s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000488s ]
+SQL: SELECT `id`,`title`,`pid`,`sort`,`url`,`hide`,`tip`,`group`,`is_dev` FROM `friend_menu` WHERE ( `id` = 2 ) LIMIT 1   [ RunTime:0.000363s ]
+SQL: SELECT `id`,`title`,`pid`,`sort`,`url`,`hide`,`tip`,`group`,`is_dev` FROM `friend_menu`  [ RunTime:0.000785s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000340s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000886s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.052456s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052845s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000927s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001456s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001165s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001665s ]
+
+[ 2015-12-10T00:13:10+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/Menu/index/pid/123.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004062s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000823s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%Menu/index%' ) LIMIT 1   [ RunTime:0.000622s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004242s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=75 ) LIMIT 1   [ RunTime:0.000412s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000381s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 68 )  [ RunTime:0.000635s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000554s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000660s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000717s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000646s ]
+SQL: SELECT `id`,`title`,`pid`,`sort`,`url`,`hide`,`tip`,`group`,`is_dev` FROM `friend_menu` WHERE ( id=123 ) LIMIT 1   [ RunTime:0.000388s ]
+SQL: SELECT `id`,`title` FROM `friend_menu`  [ RunTime:0.000584s ]
+SQL: SELECT `id`,`title`,`pid`,`sort`,`url`,`hide`,`tip`,`group`,`is_dev` FROM `friend_menu` WHERE ( `pid` = 123 ) ORDER BY sort asc,id asc  [ RunTime:0.000384s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000369s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000761s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.050186s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050545s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000999s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001591s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001264s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001763s ]
+
+[ 2015-12-10T00:13:31+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/User/index.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.003979s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000700s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%User/index%' ) LIMIT 1   [ RunTime:0.000408s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.005151s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=16 ) LIMIT 1   [ RunTime:0.000519s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 16 )  [ RunTime:0.000616s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 16 ) AND ( `hide` = 0 )  [ RunTime:0.000399s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '用户管理' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000525s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '行为管理' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000533s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000395s ]
+SQL: SHOW COLUMNS FROM `friend_member` [ RunTime:0.005076s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `friend_member` WHERE ( `status` >= 0 ) AND ( `nickname` LIKE '%%' ) LIMIT 1   [ RunTime:0.000560s ]
+SQL: SELECT `uid`,`nickname`,`realname`,`idcard`,`mobile`,`webchat`,`address`,`recommended`,`contacted`,`bdirection`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `friend_member` WHERE ( `status` >= 0 ) AND ( `nickname` LIKE '%%' ) ORDER BY uid desc LIMIT 0,10   [ RunTime:0.000812s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000382s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000800s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.054787s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.055607s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000760s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001091s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001034s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001481s ]
+
+[ 2015-12-10T00:13:37+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/Config/group.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004400s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000612s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%Config/group%' ) LIMIT 1   [ RunTime:0.000413s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.005848s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000494s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 68 )  [ RunTime:0.000883s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000618s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000654s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000536s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000499s ]
+SQL: SHOW COLUMNS FROM `friend_config` [ RunTime:0.005207s ]
+SQL: SELECT `id`,`name`,`title`,`extra`,`value`,`remark`,`type` FROM `friend_config` WHERE ( `status` = 1 ) AND ( `group` = 1 ) ORDER BY sort  [ RunTime:0.000706s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000327s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000707s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.065385s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.066033s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000843s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001217s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001454s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002151s ]
+
+[ 2015-12-10T00:13:39+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/Menu/index.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004063s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000613s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%Menu/index%' ) LIMIT 1   [ RunTime:0.000413s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004662s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=75 ) LIMIT 1   [ RunTime:0.000419s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000326s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 68 )  [ RunTime:0.000698s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000518s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000634s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000471s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000471s ]
+SQL: SELECT `id`,`title` FROM `friend_menu`  [ RunTime:0.000635s ]
+SQL: SELECT `id`,`title`,`pid`,`sort`,`url`,`hide`,`tip`,`group`,`is_dev` FROM `friend_menu` WHERE ( `pid` = 0 ) ORDER BY sort asc,id asc  [ RunTime:0.000564s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000363s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000783s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.066941s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.067329s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000777s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001111s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.002446s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003589s ]
+
+[ 2015-12-10T00:13:59+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/Menu/edit/id/123.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.003928s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000648s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%Menu/edit%' ) LIMIT 1   [ RunTime:0.000389s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004140s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=98 ) LIMIT 1   [ RunTime:0.000551s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=75 ) LIMIT 1   [ RunTime:0.000434s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000263s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 68 )  [ RunTime:0.000553s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000413s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000457s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000617s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000475s ]
+SQL: SELECT `id`,`title`,`pid`,`sort`,`url`,`hide`,`tip`,`group`,`is_dev` FROM `friend_menu` WHERE ( `id` = 123 ) LIMIT 1   [ RunTime:0.000305s ]
+SQL: SELECT `id`,`title`,`pid`,`sort`,`url`,`hide`,`tip`,`group`,`is_dev` FROM `friend_menu`  [ RunTime:0.000751s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000374s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000757s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.046198s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046602s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000877s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001277s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001375s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001875s ]
+
+[ 2015-12-10T00:14:04+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/Menu/edit.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000649s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001267s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004578s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000665s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%Menu/edit%' ) LIMIT 1   [ RunTime:0.000433s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004684s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=98 ) LIMIT 1   [ RunTime:0.000427s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=75 ) LIMIT 1   [ RunTime:0.000375s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000286s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 68 )  [ RunTime:0.000580s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000494s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000504s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000391s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000403s ]
+SQL: UPDATE `friend_menu` SET `title`='会员管理',`sort`=8,`url`='Admin/membership',`pid`=0,`group`='',`hide`=0,`is_dev`=0,`tip`='会员管理' WHERE ( `id` = 123 ) [ RunTime:0.000599s ]
+SQL: SHOW COLUMNS FROM `friend_action` [ RunTime:0.004644s ]
+SQL: SELECT * FROM `friend_action` WHERE ( `name` = 'update_menu' ) LIMIT 1   [ RunTime:0.000445s ]
+SQL: SHOW COLUMNS FROM `friend_action_log` [ RunTime:0.003917s ]
+SQL: INSERT INTO `friend_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (10,1,2130706433,'Menu',123,1449677644,'操作url：/friend-mall/index.php?s=/Admin/Menu/edit.html') [ RunTime:0.000388s ]
+
+[ 2015-12-10T00:14:06+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/Menu/index.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004427s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000606s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%Menu/index%' ) LIMIT 1   [ RunTime:0.000353s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004477s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=75 ) LIMIT 1   [ RunTime:0.000359s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000287s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 68 )  [ RunTime:0.000584s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000390s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000481s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000585s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000424s ]
+SQL: SELECT `id`,`title` FROM `friend_menu`  [ RunTime:0.000528s ]
+SQL: SELECT `id`,`title`,`pid`,`sort`,`url`,`hide`,`tip`,`group`,`is_dev` FROM `friend_menu` WHERE ( `pid` = 0 ) ORDER BY sort asc,id asc  [ RunTime:0.000490s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000344s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000720s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.067619s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.067982s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000790s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001125s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.004296s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005025s ]
+
+[ 2015-12-10T00:14:08+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/Admin/membership.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004982s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000586s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%Admin/membership%' ) LIMIT 1   [ RunTime:0.000400s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004006s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=123 ) LIMIT 1   [ RunTime:0.000342s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 123 )  [ RunTime:0.000426s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 123 ) AND ( `hide` = 0 )  [ RunTime:0.000292s ]
+ERR: 非法操作:membership
+
+[ 2015-12-10T00:15:39+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/Menu/index/pid/123.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.005234s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000746s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%Menu/index%' ) LIMIT 1   [ RunTime:0.000505s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004195s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=75 ) LIMIT 1   [ RunTime:0.000388s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000320s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 68 )  [ RunTime:0.000773s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000582s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000679s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000469s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000484s ]
+SQL: SELECT `id`,`title`,`pid`,`sort`,`url`,`hide`,`tip`,`group`,`is_dev` FROM `friend_menu` WHERE ( id=123 ) LIMIT 1   [ RunTime:0.000373s ]
+SQL: SELECT `id`,`title` FROM `friend_menu`  [ RunTime:0.000539s ]
+SQL: SELECT `id`,`title`,`pid`,`sort`,`url`,`hide`,`tip`,`group`,`is_dev` FROM `friend_menu` WHERE ( `pid` = 123 ) ORDER BY sort asc,id asc  [ RunTime:0.000501s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000340s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000747s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.048131s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048494s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000782s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001116s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001103s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001744s ]
+
+[ 2015-12-10T00:16:59+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/Menu/index/pid/68.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004128s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000821s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%Menu/index%' ) LIMIT 1   [ RunTime:0.000596s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004188s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=75 ) LIMIT 1   [ RunTime:0.000415s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000361s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 68 )  [ RunTime:0.000581s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000399s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000537s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000453s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000710s ]
+SQL: SELECT `id`,`title`,`pid`,`sort`,`url`,`hide`,`tip`,`group`,`is_dev` FROM `friend_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000444s ]
+SQL: SELECT `id`,`title` FROM `friend_menu`  [ RunTime:0.000542s ]
+SQL: SELECT `id`,`title`,`pid`,`sort`,`url`,`hide`,`tip`,`group`,`is_dev` FROM `friend_menu` WHERE ( `pid` = 68 ) ORDER BY sort asc,id asc  [ RunTime:0.000525s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000357s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000734s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.080754s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.081219s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000944s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001430s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001482s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002165s ]
+
+[ 2015-12-10T00:17:25+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/Menu/index/pid/68.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004372s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000641s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%Menu/index%' ) LIMIT 1   [ RunTime:0.000387s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004115s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=75 ) LIMIT 1   [ RunTime:0.000530s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000395s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 68 )  [ RunTime:0.000718s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000421s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000475s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000563s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000607s ]
+SQL: SELECT `id`,`title`,`pid`,`sort`,`url`,`hide`,`tip`,`group`,`is_dev` FROM `friend_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000377s ]
+SQL: SELECT `id`,`title` FROM `friend_menu`  [ RunTime:0.000630s ]
+SQL: SELECT `id`,`title`,`pid`,`sort`,`url`,`hide`,`tip`,`group`,`is_dev` FROM `friend_menu` WHERE ( `pid` = 68 ) ORDER BY sort asc,id asc  [ RunTime:0.000569s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000353s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000731s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.075363s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.075870s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000996s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001333s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001419s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001933s ]
+
+[ 2015-12-10T00:17:31+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/Menu/edit/id/86.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.005696s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000647s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%Menu/edit%' ) LIMIT 1   [ RunTime:0.000399s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004478s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=98 ) LIMIT 1   [ RunTime:0.000523s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=75 ) LIMIT 1   [ RunTime:0.000459s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000452s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 68 )  [ RunTime:0.000773s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000457s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000532s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000540s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000487s ]
+SQL: SELECT `id`,`title`,`pid`,`sort`,`url`,`hide`,`tip`,`group`,`is_dev` FROM `friend_menu` WHERE ( `id` = 86 ) LIMIT 1   [ RunTime:0.000377s ]
+SQL: SELECT `id`,`title`,`pid`,`sort`,`url`,`hide`,`tip`,`group`,`is_dev` FROM `friend_menu`  [ RunTime:0.000925s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000335s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000701s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.053021s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053549s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001165s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001545s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001304s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002006s ]
+
+[ 2015-12-10T00:18:33+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/User/index.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.003979s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000889s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%User/index%' ) LIMIT 1   [ RunTime:0.000636s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004372s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=16 ) LIMIT 1   [ RunTime:0.000350s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 16 )  [ RunTime:0.000516s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 16 ) AND ( `hide` = 0 )  [ RunTime:0.000341s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '用户管理' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000390s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '行为管理' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000376s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000363s ]
+SQL: SHOW COLUMNS FROM `friend_member` [ RunTime:0.004772s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `friend_member` WHERE ( `status` >= 0 ) AND ( `nickname` LIKE '%%' ) LIMIT 1   [ RunTime:0.000431s ]
+SQL: SELECT `uid`,`nickname`,`realname`,`idcard`,`mobile`,`webchat`,`address`,`recommended`,`contacted`,`bdirection`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `friend_member` WHERE ( `status` >= 0 ) AND ( `nickname` LIKE '%%' ) ORDER BY uid desc LIMIT 0,10   [ RunTime:0.000524s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000327s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000694s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.052337s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052745s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000760s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001101s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000785s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001263s ]
+
+[ 2015-12-10T00:18:38+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/Admin/membership.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004262s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000642s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%Admin/membership%' ) LIMIT 1   [ RunTime:0.000458s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004824s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=123 ) LIMIT 1   [ RunTime:0.000490s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 123 )  [ RunTime:0.000558s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 123 ) AND ( `hide` = 0 )  [ RunTime:0.000296s ]
+ERR: 非法操作:membership
+
+[ 2015-12-10T00:29:29+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/Index/index.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.005093s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000733s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%Index/index%' ) LIMIT 1   [ RunTime:0.000391s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.003922s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000356s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 1 )  [ RunTime:0.000445s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 1 ) AND ( `hide` = 0 )  [ RunTime:0.000286s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000262s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000625s ]
+INFO: [ AdminIndex ] --START--
+SQL: SHOW COLUMNS FROM `friend_addons` [ RunTime:0.004429s ]
+SQL: SELECT `config` FROM `friend_addons` WHERE ( `name` = 'SiteStat' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000485s ]
+SQL: SHOW COLUMNS FROM `friend_member` [ RunTime:0.004280s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `friend_member` LIMIT 1   [ RunTime:0.000317s ]
+SQL: SHOW COLUMNS FROM `friend_action_log` [ RunTime:0.004739s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `friend_action_log` LIMIT 1   [ RunTime:0.000351s ]
+SQL: SHOW COLUMNS FROM `friend_document` [ RunTime:0.004421s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `friend_document` LIMIT 1   [ RunTime:0.000321s ]
+SQL: SHOW COLUMNS FROM `friend_category` [ RunTime:0.004372s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `friend_category` LIMIT 1   [ RunTime:0.000320s ]
+SQL: SHOW COLUMNS FROM `friend_model` [ RunTime:0.004892s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `friend_model` LIMIT 1   [ RunTime:0.000339s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000150s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.055332s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.006018s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006398s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000654s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001013s ]
+INFO: Run SiteStat [ RunTime:0.050726s ]
+SQL: SELECT `config` FROM `friend_addons` WHERE ( `name` = 'SystemInfo' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000495s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000859s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.528546s ]
+SQL: select version() as v; [ RunTime:0.000865s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.027938s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.456734s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000145s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.485077s ]
+INFO: Run SystemInfo [ RunTime:0.486409s ]
+SQL: SELECT `config` FROM `friend_addons` WHERE ( `name` = 'DevTeam' ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000762s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000305s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.559577s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008811s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.496237s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000146s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.504832s ]
+INFO: Run DevTeam [ RunTime:0.018673s ]
+INFO: [ AdminIndex ] --END-- [ RunTime:0.556930s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.011662s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.496237s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000129s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.507592s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.002466s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003670s ]
+
+[ 2015-12-10T00:29:30+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/Article/mydocument.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004319s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000727s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%Article/mydocument%' ) LIMIT 1   [ RunTime:0.000354s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004292s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.000428s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 2 )  [ RunTime:0.000776s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 2 ) AND ( `hide` = 0 )  [ RunTime:0.000496s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '内容' ) AND ( `pid` = 2 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000443s ]
+SQL: SHOW COLUMNS FROM `friend_auth_group_access` [ RunTime:0.004320s ]
+SQL: SELECT `extend_id` FROM friend_auth_group_access g INNER JOIN friend_auth_extend c on g.group_id=c.group_id  WHERE ( g.uid='1' and c.type='1' and !isnull(extend_id) )  [ RunTime:0.000574s ]
+SQL: SHOW COLUMNS FROM `friend_category` [ RunTime:0.004231s ]
+SQL: SELECT `id`,`title`,`pid`,`allow_publish` FROM `friend_category` WHERE ( `status` = 1 ) ORDER BY pid,sort  [ RunTime:0.000650s ]
+SQL: SHOW COLUMNS FROM `friend_document` [ RunTime:0.004965s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `friend_document` WHERE ( `status` IN ('0','1','2') ) AND ( `uid` = 1 ) AND ( `pid` = 0 ) LIMIT 1   [ RunTime:0.000420s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `friend_document` WHERE ( `status` IN ('0','1','2') ) AND ( `uid` = 1 ) AND ( `pid` = 0 ) ORDER BY update_time desc LIMIT 0,10   [ RunTime:0.000434s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000448s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000821s ]
+SQL: SHOW COLUMNS FROM `friend_document` [ RunTime:0.004312s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `friend_document` WHERE ( pid=1 ) LIMIT 1   [ RunTime:0.000344s ]
+SQL: SELECT `title` FROM `friend_category` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.000338s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.084316s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.084775s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000786s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001137s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001067s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001650s ]
+
+[ 2015-12-10T00:29:32+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/User/index.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004072s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000628s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%User/index%' ) LIMIT 1   [ RunTime:0.000346s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.005396s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=16 ) LIMIT 1   [ RunTime:0.000462s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 16 )  [ RunTime:0.000639s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 16 ) AND ( `hide` = 0 )  [ RunTime:0.000384s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '用户管理' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000497s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '行为管理' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000475s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '' ) AND ( `pid` = 16 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000408s ]
+SQL: SHOW COLUMNS FROM `friend_member` [ RunTime:0.004343s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `friend_member` WHERE ( `status` >= 0 ) AND ( `nickname` LIKE '%%' ) LIMIT 1   [ RunTime:0.000522s ]
+SQL: SELECT `uid`,`nickname`,`realname`,`idcard`,`mobile`,`webchat`,`address`,`recommended`,`contacted`,`bdirection`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `friend_member` WHERE ( `status` >= 0 ) AND ( `nickname` LIKE '%%' ) ORDER BY uid desc LIMIT 0,10   [ RunTime:0.000645s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000314s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000678s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.050538s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050910s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000738s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001079s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001096s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001693s ]
+
+[ 2015-12-10T00:30:17+08:00 ] 127.0.0.1 /friend-mall/index.php?s=/Admin/Config/group.html
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004144s ]
+SQL: SELECT * FROM `friend_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000713s ]
+SQL: SELECT `id` FROM `friend_menu` WHERE ( url like '%Config/group%' ) LIMIT 1   [ RunTime:0.000448s ]
+SQL: SHOW COLUMNS FROM `friend_menu` [ RunTime:0.004232s ]
+SQL: SELECT `id`,`pid`,`title` FROM `friend_menu` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000392s ]
+SQL: SELECT DISTINCT  `group` FROM `friend_menu` WHERE ( pid = 68 )  [ RunTime:0.000645s ]
+SQL: SELECT `id`,`url` FROM `friend_menu` WHERE ( `pid` = 68 ) AND ( `hide` = 0 )  [ RunTime:0.000438s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '系统设置' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000527s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000469s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `friend_menu` WHERE ( `group` = '数据备份' ) AND ( `pid` = 68 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000783s ]
+SQL: SHOW COLUMNS FROM `friend_config` [ RunTime:0.004284s ]
+SQL: SELECT `id`,`name`,`title`,`extra`,`value`,`remark`,`type` FROM `friend_config` WHERE ( `status` = 1 ) AND ( `group` = 1 ) ORDER BY sort  [ RunTime:0.000597s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000318s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000691s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.054467s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054837s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000776s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001105s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001427s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002137s ]
+

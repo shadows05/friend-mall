@@ -1,0 +1,90 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>编辑用户上级</h2>
+    </div>
+    <form action="{:U()}" method="post" class="form-horizontal">
+        <div class="form-item">
+            <label class="item-label">用户ID<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-small" name="uid" value="{$user_superior.uid}" readonly="readonly">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">上一级<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-small" name="first_superior" value="{$user_superior.first_superior}">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">上二级<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-small" name="second_superior" value="{$user_superior.second_superior}">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">上三级<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-small" name="third_superior" value="{$user_superior.third_superior}">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">上四级<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-small" name="fouth_superior" value="{$user_superior.fouth_superior}">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">上五级<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-small" name="fifth_superior" value="{$user_superior.fifth_superior}">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">上六级<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-small" name="sixth_superior" value="{$user_superior.sixth_superior}">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">上七级<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-small" name="seventh_superior" value="{$user_superior.seventh_superior}">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">上八级<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-small" name="eighth_superior" value="{$user_superior.eighth_superior}">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">上九级<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-small" name="ninth_superior" value="{$user_superior.ninth_superior}">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('User/index')}');
+    </script>
+</block>
