@@ -1,2 +1,5 @@
 .idea/
-Runtime/Logs/*.log
+/Runtime/Cache
+/Runtime/Logs
+/Runtime/Temp
+
