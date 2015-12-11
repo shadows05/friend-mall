@@ -1,22 +1,22 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : symfony
+Source Server         : local
 Source Server Version : 50615
-Source Host           : 127.0.0.1:3306
+Source Host           : localhost:3306
 Source Database       : friend-mall
 
 Target Server Type    : MYSQL
 Target Server Version : 50615
 File Encoding         : 65001
 
-Date: 2015-12-10 00:41:42
+Date: 2015-12-11 18:30:20
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for friend_action
+-- Table structure for `friend_action`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_action`;
 CREATE TABLE `friend_action` (
@@ -49,7 +49,7 @@ INSERT INTO `friend_action` VALUES ('11', 'update_category', '更新分类', '�
 INSERT INTO `friend_action` VALUES ('12', 'add_user', '新增用户', '创建新的用户', '', '[user|get_nickname]在[time|time_format]在后台新增用户[record|get_nickname]', '1', '1', '1449668178');
 
 -- ----------------------------
--- Table structure for friend_action_log
+-- Table structure for `friend_action_log`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_action_log`;
 CREATE TABLE `friend_action_log` (
@@ -66,7 +66,7 @@ CREATE TABLE `friend_action_log` (
   KEY `action_ip_ix` (`action_ip`),
   KEY `action_id_ix` (`action_id`),
   KEY `user_id_ix` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='行为日志表';
+) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='行为日志表';
 
 -- ----------------------------
 -- Records of friend_action_log
@@ -85,9 +85,39 @@ INSERT INTO `friend_action_log` VALUES ('11', '10', '1', '2130706433', 'Menu', '
 INSERT INTO `friend_action_log` VALUES ('12', '1', '1', '2130706433', 'member', '1', 'Administrator在2015-12-09 22:32登录了后台', '1', '1449671561');
 INSERT INTO `friend_action_log` VALUES ('13', '10', '1', '2130706433', 'Menu', '123', '操作url：/friend-mall/index.php?s=/Admin/Menu/add.html', '1', '1449677568');
 INSERT INTO `friend_action_log` VALUES ('14', '10', '1', '2130706433', 'Menu', '123', '操作url：/friend-mall/index.php?s=/Admin/Menu/edit.html', '1', '1449677644');
+INSERT INTO `friend_action_log` VALUES ('15', '10', '1', '2130706433', 'Menu', '123', '操作url：/friend-mall/index.php?s=/Admin/Menu/edit.html', '1', '1449717716');
+INSERT INTO `friend_action_log` VALUES ('16', '10', '1', '2130706433', 'Menu', '123', '操作url：/friend-mall/index.php?s=/Admin/Menu/edit.html', '1', '1449717792');
+INSERT INTO `friend_action_log` VALUES ('17', '10', '1', '2130706433', 'Menu', '124', '操作url：/friend-mall/index.php?s=/Admin/Menu/add.html', '1', '1449717817');
+INSERT INTO `friend_action_log` VALUES ('18', '10', '1', '2130706433', 'Menu', '125', '操作url：/friend-mall/index.php?s=/Admin/Menu/add.html', '1', '1449717846');
+INSERT INTO `friend_action_log` VALUES ('19', '10', '1', '2130706433', 'Menu', '126', '操作url：/friend-mall/index.php?s=/Admin/Menu/add.html', '1', '1449717892');
+INSERT INTO `friend_action_log` VALUES ('20', '10', '2', '2130706433', 'Menu', '68', '操作url：/friend-mall/index.php?s=/Admin/Menu/edit.html', '1', '1449718642');
+INSERT INTO `friend_action_log` VALUES ('21', '1', '1', '2130706433', 'member', '1', 'Administrator在2015-12-10 11:38登录了后台', '1', '1449718713');
+INSERT INTO `friend_action_log` VALUES ('22', '1', '20018', '2130706433', 'member', '20018', 'gaoduntao在2015-12-10 14:35登录了后台', '1', '1449729353');
+INSERT INTO `friend_action_log` VALUES ('23', '1', '1', '2130706433', 'member', '1', 'Administrator在2015-12-10 14:37登录了后台', '1', '1449729434');
+INSERT INTO `friend_action_log` VALUES ('24', '1', '20018', '2130706433', 'member', '20018', 'gaoduntao在2015-12-10 14:58登录了后台', '1', '1449730699');
+INSERT INTO `friend_action_log` VALUES ('25', '1', '20018', '2130706433', 'member', '20018', 'gaoduntao在2015-12-10 15:03登录了后台', '1', '1449731014');
+INSERT INTO `friend_action_log` VALUES ('26', '10', '1', '2130706433', 'Menu', '127', '操作url：/friend-mall/index.php?s=/Admin/Menu/add.html', '1', '1449731630');
+INSERT INTO `friend_action_log` VALUES ('27', '10', '1', '2130706433', 'Menu', '127', '操作url：/friend-mall/index.php?s=/Admin/Menu/edit.html', '1', '1449731646');
+INSERT INTO `friend_action_log` VALUES ('28', '10', '1', '2130706433', 'Menu', '128', '操作url：/friend-mall/index.php?s=/Admin/Menu/add.html', '1', '1449731673');
+INSERT INTO `friend_action_log` VALUES ('29', '10', '1', '2130706433', 'Menu', '127', '操作url：/friend-mall/index.php?s=/Admin/Menu/edit.html', '1', '1449731682');
+INSERT INTO `friend_action_log` VALUES ('30', '10', '1', '2130706433', 'Menu', '129', '操作url：/friend-mall/index.php?s=/Admin/Menu/add.html', '1', '1449731714');
+INSERT INTO `friend_action_log` VALUES ('31', '10', '1', '2130706433', 'Menu', '130', '操作url：/friend-mall/index.php?s=/Admin/Menu/add.html', '1', '1449731738');
+INSERT INTO `friend_action_log` VALUES ('32', '10', '1', '2130706433', 'Menu', '131', '操作url：/friend-mall/index.php?s=/Admin/Menu/add.html', '1', '1449731774');
+INSERT INTO `friend_action_log` VALUES ('33', '10', '1', '2130706433', 'Menu', '0', '操作url：/friend-mall/index.php?s=/Admin/Menu/del/id/131.html', '1', '1449731790');
+INSERT INTO `friend_action_log` VALUES ('34', '10', '1', '2130706433', 'Menu', '130', '操作url：/friend-mall/index.php?s=/Admin/Menu/edit.html', '1', '1449731799');
+INSERT INTO `friend_action_log` VALUES ('35', '10', '1', '2130706433', 'Menu', '132', '操作url：/friend-mall/index.php?s=/Admin/Menu/add.html', '1', '1449731894');
+INSERT INTO `friend_action_log` VALUES ('36', '1', '20018', '2130706433', 'member', '20018', 'gaoduntao在2015-12-10 15:19登录了后台', '1', '1449731949');
+INSERT INTO `friend_action_log` VALUES ('37', '1', '20018', '2130706433', 'member', '20018', 'gaoduntao在2015-12-10 15:20登录了后台', '1', '1449732011');
+INSERT INTO `friend_action_log` VALUES ('38', '1', '20018', '2130706433', 'member', '20018', 'gaoduntao在2015-12-10 15:22登录了后台', '1', '1449732125');
+INSERT INTO `friend_action_log` VALUES ('39', '10', '1', '2130706433', 'Menu', '132', '操作url：/friend-mall/index.php?s=/Admin/Menu/edit.html', '1', '1449732160');
+INSERT INTO `friend_action_log` VALUES ('40', '1', '2', '2130706433', 'member', '2', 'Administrator在2015-12-10 15:28登录了后台', '1', '1449732517');
+INSERT INTO `friend_action_log` VALUES ('41', '1', '2', '2130706433', 'member', '2', 'Administrator在2015-12-10 15:29登录了后台', '1', '1449732561');
+INSERT INTO `friend_action_log` VALUES ('42', '1', '2', '2130706433', 'member', '2', 'Administrator在2015-12-10 15:31登录了后台', '1', '1449732660');
+INSERT INTO `friend_action_log` VALUES ('43', '1', '2', '2130706433', 'member', '2', 'Administrator在2015-12-10 15:32登录了后台', '1', '1449732766');
+INSERT INTO `friend_action_log` VALUES ('44', '1', '2', '2130706433', 'member', '2', 'Administrator在2015-12-10 15:56登录了后台', '1', '1449734199');
 
 -- ----------------------------
--- Table structure for friend_addons
+-- Table structure for `friend_addons`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_addons`;
 CREATE TABLE `friend_addons` (
@@ -116,7 +146,7 @@ INSERT INTO `friend_addons` VALUES ('6', 'Attachment', '附件', '用于文档�
 INSERT INTO `friend_addons` VALUES ('9', 'SocialComment', '通用社交化评论', '集成了各种社交化评论插件，轻松集成到系统中。', '1', '{\"comment_type\":\"1\",\"comment_uid_youyan\":\"\",\"comment_short_name_duoshuo\":\"\",\"comment_data_list_duoshuo\":\"\"}', 'thinkphp', '0.1', '1380273962', '0');
 
 -- ----------------------------
--- Table structure for friend_attachment
+-- Table structure for `friend_attachment`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_attachment`;
 CREATE TABLE `friend_attachment` (
@@ -142,7 +172,7 @@ CREATE TABLE `friend_attachment` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for friend_attribute
+-- Table structure for `friend_attribute`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_attribute`;
 CREATE TABLE `friend_attribute` (
@@ -208,7 +238,7 @@ INSERT INTO `friend_attribute` VALUES ('31', 'download', '下载次数', 'int(10
 INSERT INTO `friend_attribute` VALUES ('32', 'size', '文件大小', 'bigint(20) unsigned NOT NULL ', 'num', '0', '单位bit', '1', '', '3', '0', '1', '1383896371', '1383891252', '', '0', '', '', '', '0', '');
 
 -- ----------------------------
--- Table structure for friend_auth_extend
+-- Table structure for `friend_auth_extend`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_auth_extend`;
 CREATE TABLE `friend_auth_extend` (
@@ -233,7 +263,7 @@ INSERT INTO `friend_auth_extend` VALUES ('1', '4', '1');
 INSERT INTO `friend_auth_extend` VALUES ('1', '37', '1');
 
 -- ----------------------------
--- Table structure for friend_auth_group
+-- Table structure for `friend_auth_group`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_auth_group`;
 CREATE TABLE `friend_auth_group` (
@@ -250,11 +280,11 @@ CREATE TABLE `friend_auth_group` (
 -- ----------------------------
 -- Records of friend_auth_group
 -- ----------------------------
-INSERT INTO `friend_auth_group` VALUES ('1', 'admin', '1', '超级管理员', '超级管理员', '1', '1,2,3,4,5,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,79,80,81,82,83,84,86,87,88,89,90,91,92,93,94,95,100,102,103,107,108,109,110,195,205,206,207,208,209,210,212,213,214,215,216');
-INSERT INTO `friend_auth_group` VALUES ('2', 'admin', '1', '注册用户', '注册用户', '1', '1,2,5,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,79,80,82,83,84,88,89,90,91,92,93,96,97,100,102,103,195');
+INSERT INTO `friend_auth_group` VALUES ('1', 'admin', '1', '超级管理员', '超级管理员', '1', '1,2,3,4,5,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,79,80,81,82,83,84,86,87,88,89,90,91,92,93,94,95,100,102,103,107,108,109,110,195,205,206,207,208,209,210,212,213,214,215,216,218');
+INSERT INTO `friend_auth_group` VALUES ('2', 'admin', '1', '注册用户', '注册用户', '1', '217,219,220,221,222,223,224');
 
 -- ----------------------------
--- Table structure for friend_auth_group_access
+-- Table structure for `friend_auth_group_access`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_auth_group_access`;
 CREATE TABLE `friend_auth_group_access` (
@@ -268,6 +298,7 @@ CREATE TABLE `friend_auth_group_access` (
 -- ----------------------------
 -- Records of friend_auth_group_access
 -- ----------------------------
+INSERT INTO `friend_auth_group_access` VALUES ('2', '1');
 INSERT INTO `friend_auth_group_access` VALUES ('20013', '2');
 INSERT INTO `friend_auth_group_access` VALUES ('20014', '2');
 INSERT INTO `friend_auth_group_access` VALUES ('20015', '2');
@@ -276,7 +307,7 @@ INSERT INTO `friend_auth_group_access` VALUES ('20017', '2');
 INSERT INTO `friend_auth_group_access` VALUES ('20018', '2');
 
 -- ----------------------------
--- Table structure for friend_auth_rule
+-- Table structure for `friend_auth_rule`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_auth_rule`;
 CREATE TABLE `friend_auth_rule` (
@@ -289,7 +320,7 @@ CREATE TABLE `friend_auth_rule` (
   `condition` varchar(300) NOT NULL DEFAULT '' COMMENT '规则附加条件',
   PRIMARY KEY (`id`),
   KEY `module` (`module`,`status`,`type`)
-) ENGINE=MyISAM AUTO_INCREMENT=217 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=225 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of friend_auth_rule
@@ -507,9 +538,17 @@ INSERT INTO `friend_auth_rule` VALUES ('213', 'admin', '1', 'Admin/Menu/sort', '
 INSERT INTO `friend_auth_rule` VALUES ('214', 'admin', '1', 'Admin/Channel/sort', '排序', '1', '');
 INSERT INTO `friend_auth_rule` VALUES ('215', 'admin', '1', 'Admin/Category/operate/type/move', '移动', '1', '');
 INSERT INTO `friend_auth_rule` VALUES ('216', 'admin', '1', 'Admin/Category/operate/type/merge', '合并', '1', '');
+INSERT INTO `friend_auth_rule` VALUES ('217', 'admin', '1', 'Admin/Membership/index', '推荐图谱', '1', '');
+INSERT INTO `friend_auth_rule` VALUES ('218', 'admin', '1', 'Admin/User/editsuperior', '更新用户上级', '1', '');
+INSERT INTO `friend_auth_rule` VALUES ('219', 'admin', '2', 'Admin/Membership/index', '团队信息', '1', '');
+INSERT INTO `friend_auth_rule` VALUES ('220', 'admin', '2', 'Admin/Membercheck/index', '会员审核', '1', '');
+INSERT INTO `friend_auth_rule` VALUES ('221', 'admin', '2', 'Admin/Memberup/index', '会员升级', '1', '');
+INSERT INTO `friend_auth_rule` VALUES ('222', 'admin', '2', 'Admin/Memberpoint/index', '我的积分', '1', '');
+INSERT INTO `friend_auth_rule` VALUES ('223', 'admin', '2', 'Admin/Memberorder/index', '我的订单', '1', '');
+INSERT INTO `friend_auth_rule` VALUES ('224', 'admin', '2', 'Admin/Membership/recommend', '推荐会员', '1', '');
 
 -- ----------------------------
--- Table structure for friend_category
+-- Table structure for `friend_category`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_category`;
 CREATE TABLE `friend_category` (
@@ -551,7 +590,7 @@ INSERT INTO `friend_category` VALUES ('1', 'blog', '博客', '0', '0', '10', '',
 INSERT INTO `friend_category` VALUES ('2', 'default_blog', '默认分类', '1', '1', '10', '', '', '', '', '', '', '', '2', '2,1,3', '0', '1', '1', '0', '1', '1', '', '1379475028', '1386839751', '1', '31');
 
 -- ----------------------------
--- Table structure for friend_channel
+-- Table structure for `friend_channel`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_channel`;
 CREATE TABLE `friend_channel` (
@@ -576,7 +615,7 @@ INSERT INTO `friend_channel` VALUES ('2', '0', '博客', 'Article/index?category
 INSERT INTO `friend_channel` VALUES ('3', '0', '官网', 'http://www.onethink.cn', '3', '1379475154', '1387163458', '1', '0');
 
 -- ----------------------------
--- Table structure for friend_config
+-- Table structure for `friend_config`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_config`;
 CREATE TABLE `friend_config` (
@@ -630,7 +669,7 @@ INSERT INTO `friend_config` VALUES ('36', 'ADMIN_ALLOW_IP', '2', '后台允许�
 INSERT INTO `friend_config` VALUES ('37', 'SHOW_PAGE_TRACE', '4', '是否显示页面Trace', '4', '0:关闭\r\n1:开启', '是否显示页面Trace信息', '1387165685', '1387165685', '1', '0', '1');
 
 -- ----------------------------
--- Table structure for friend_document
+-- Table structure for `friend_document`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_document`;
 CREATE TABLE `friend_document` (
@@ -668,7 +707,7 @@ CREATE TABLE `friend_document` (
 INSERT INTO `friend_document` VALUES ('1', '1', '', 'OneThink1.0正式版发布', '2', '大家期待的OneThink正式版发布', '0', '0', '2', '2', '0', '0', '0', '1', '0', '0', '8', '0', '0', '0', '1387260660', '1387263112', '1');
 
 -- ----------------------------
--- Table structure for friend_document_article
+-- Table structure for `friend_document_article`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_document_article`;
 CREATE TABLE `friend_document_article` (
@@ -686,7 +725,7 @@ CREATE TABLE `friend_document_article` (
 INSERT INTO `friend_document_article` VALUES ('1', '0', '<h1>\r\n	OneThink1.0正式版发布&nbsp;\r\n</h1>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	<strong>OneThink是一个开源的内容管理框架，基于最新的ThinkPHP3.2版本开发，提供更方便、更安全的WEB应用开发体验，采用了全新的架构设计和命名空间机制，融合了模块化、驱动化和插件化的设计理念于一体，开启了国内WEB应用傻瓜式开发的新潮流。&nbsp;</strong> \r\n</p>\r\n<h2>\r\n	主要特性：\r\n</h2>\r\n<p>\r\n	1. 基于ThinkPHP最新3.2版本。\r\n</p>\r\n<p>\r\n	2. 模块化：全新的架构和模块化的开发机制，便于灵活扩展和二次开发。&nbsp;\r\n</p>\r\n<p>\r\n	3. 文档模型/分类体系：通过和文档模型绑定，以及不同的文档类型，不同分类可以实现差异化的功能，轻松实现诸如资讯、下载、讨论和图片等功能。\r\n</p>\r\n<p>\r\n	4. 开源免费：OneThink遵循Apache2开源协议,免费提供使用。&nbsp;\r\n</p>\r\n<p>\r\n	5. 用户行为：支持自定义用户行为，可以对单个用户或者群体用户的行为进行记录及分享，为您的运营决策提供有效参考数据。\r\n</p>\r\n<p>\r\n	6. 云端部署：通过驱动的方式可以轻松支持平台的部署，让您的网站无缝迁移，内置已经支持SAE和BAE3.0。\r\n</p>\r\n<p>\r\n	7. 云服务支持：即将启动支持云存储、云安全、云过滤和云统计等服务，更多贴心的服务让您的网站更安心。\r\n</p>\r\n<p>\r\n	8. 安全稳健：提供稳健的安全策略，包括备份恢复、容错、防止恶意攻击登录，网页防篡改等多项安全管理功能，保证系统安全，可靠、稳定的运行。&nbsp;\r\n</p>\r\n<p>\r\n	9. 应用仓库：官方应用仓库拥有大量来自第三方插件和应用模块、模板主题，有众多来自开源社区的贡献，让您的网站“One”美无缺。&nbsp;\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	<strong>&nbsp;OneThink集成了一个完善的后台管理体系和前台模板标签系统，让你轻松管理数据和进行前台网站的标签式开发。&nbsp;</strong> \r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<h2>\r\n	后台主要功能：\r\n</h2>\r\n<p>\r\n	1. 用户Passport系统\r\n</p>\r\n<p>\r\n	2. 配置管理系统&nbsp;\r\n</p>\r\n<p>\r\n	3. 权限控制系统\r\n</p>\r\n<p>\r\n	4. 后台建模系统&nbsp;\r\n</p>\r\n<p>\r\n	5. 多级分类系统&nbsp;\r\n</p>\r\n<p>\r\n	6. 用户行为系统&nbsp;\r\n</p>\r\n<p>\r\n	7. 钩子和插件系统\r\n</p>\r\n<p>\r\n	8. 系统日志系统&nbsp;\r\n</p>\r\n<p>\r\n	9. 数据备份和还原\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	&nbsp;[ 官方下载：&nbsp;<a href=\"http://www.onethink.cn/download.html\" target=\"_blank\">http://www.onethink.cn/download.html</a>&nbsp;&nbsp;开发手册：<a href=\"http://document.onethink.cn/\" target=\"_blank\">http://document.onethink.cn/</a>&nbsp;]&nbsp;\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<p>\r\n	<strong>OneThink开发团队 2013</strong> \r\n</p>', '', '0');
 
 -- ----------------------------
--- Table structure for friend_document_download
+-- Table structure for `friend_document_download`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_document_download`;
 CREATE TABLE `friend_document_download` (
@@ -705,7 +744,7 @@ CREATE TABLE `friend_document_download` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for friend_file
+-- Table structure for `friend_file`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_file`;
 CREATE TABLE `friend_file` (
@@ -729,7 +768,7 @@ CREATE TABLE `friend_file` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for friend_hooks
+-- Table structure for `friend_hooks`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_hooks`;
 CREATE TABLE `friend_hooks` (
@@ -759,7 +798,7 @@ INSERT INTO `friend_hooks` VALUES ('14', 'topicComment', '评论提交方式扩�
 INSERT INTO `friend_hooks` VALUES ('16', 'app_begin', '应用开始', '2', '1384481614', '');
 
 -- ----------------------------
--- Table structure for friend_member
+-- Table structure for `friend_member`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_member`;
 CREATE TABLE `friend_member` (
@@ -783,6 +822,7 @@ CREATE TABLE `friend_member` (
   `last_login_ip` bigint(20) NOT NULL DEFAULT '0' COMMENT '最后登录IP',
   `last_login_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '最后登录时间',
   `status` tinyint(4) NOT NULL DEFAULT '0' COMMENT '会员状态',
+  `check_status` tinyint(4) DEFAULT '0' COMMENT '0:未审核 1:推荐人已审核 2:推荐人5级已审核，成为正式会员',
   PRIMARY KEY (`uid`),
   KEY `status` (`status`)
 ) ENGINE=MyISAM AUTO_INCREMENT=20019 DEFAULT CHARSET=utf8 COMMENT='会员表';
@@ -790,11 +830,11 @@ CREATE TABLE `friend_member` (
 -- ----------------------------
 -- Records of friend_member
 -- ----------------------------
-INSERT INTO `friend_member` VALUES ('1', 'Administrator', '\'\'', null, '\'\'', '\'\'', '\'\'', '0', '0', '2', '0', '0000-00-00', '', '10', '5', '0', '1449629504', '2130706433', '1449671561', '1');
-INSERT INTO `friend_member` VALUES ('20018', 'gaoduntao', '高敦涛', '370125198511205319', '18618450791', '18618450791', '18618450791', '1', '0', '1', '0', '0000-00-00', '', '0', '0', '0', '0', '0', '0', '1');
+INSERT INTO `friend_member` VALUES ('2', 'Administrator', '\'\'', null, '\'\'', '\'\'', '\'\'', '0', '0', '2', '0', '0000-00-00', '', '20', '12', '0', '1449629504', '2130706433', '1449734199', '1', '0');
+INSERT INTO `friend_member` VALUES ('20018', 'gaoduntao', '高敦涛', '370125198511205319', '18618450791', '18618450791', '18618450791', '1', '0', '1', '0', '0000-00-00', '', '10', '6', '0', '0', '2130706433', '1449732125', '1', '0');
 
 -- ----------------------------
--- Table structure for friend_member_superior
+-- Table structure for `friend_member_superior`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_member_superior`;
 CREATE TABLE `friend_member_superior` (
@@ -819,7 +859,7 @@ CREATE TABLE `friend_member_superior` (
 INSERT INTO `friend_member_superior` VALUES ('20018', '20018', '20018', '20018', '20018', '20018', '20018', '20018', '20018', '20018', '1449670875', '1449676306');
 
 -- ----------------------------
--- Table structure for friend_menu
+-- Table structure for `friend_menu`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_menu`;
 CREATE TABLE `friend_menu` (
@@ -834,7 +874,7 @@ CREATE TABLE `friend_menu` (
   `is_dev` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否仅开发者模式可见',
   PRIMARY KEY (`id`),
   KEY `pid` (`pid`)
-) ENGINE=MyISAM AUTO_INCREMENT=124 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=133 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of friend_menu
@@ -951,10 +991,18 @@ INSERT INTO `friend_menu` VALUES ('119', '排序', '70', '0', 'Config/sort', '1'
 INSERT INTO `friend_menu` VALUES ('120', '排序', '75', '0', 'Menu/sort', '1', '', '', '0');
 INSERT INTO `friend_menu` VALUES ('121', '排序', '76', '0', 'Channel/sort', '1', '', '', '0');
 INSERT INTO `friend_menu` VALUES ('122', '更新用户上级', '17', '1', 'User/editsuperior', '0', '更新用户上级', '', '0');
-INSERT INTO `friend_menu` VALUES ('123', '会员管理', '0', '8', 'Admin/membership', '0', '会员管理', '', '0');
+INSERT INTO `friend_menu` VALUES ('123', '团队信息', '0', '8', 'Membership/index', '0', '团队信息', '', '0');
+INSERT INTO `friend_menu` VALUES ('124', '个人资料', '123', '0', 'Membership/index', '0', '', '', '0');
+INSERT INTO `friend_menu` VALUES ('125', '会员统计', '123', '1', 'Membership/index', '0', '', '', '0');
+INSERT INTO `friend_menu` VALUES ('126', '推荐图谱', '123', '2', 'Membership/index', '0', '', '', '0');
+INSERT INTO `friend_menu` VALUES ('127', '会员审核', '0', '9', 'Membercheck/index', '0', '', '', '0');
+INSERT INTO `friend_menu` VALUES ('128', '会员升级', '0', '10', 'Memberup/index', '0', '', '', '0');
+INSERT INTO `friend_menu` VALUES ('129', '我的积分', '0', '12', 'Memberpoint/index', '0', '', '', '0');
+INSERT INTO `friend_menu` VALUES ('130', '我的订单', '0', '13', 'Memberorder/index', '0', '', '', '0');
+INSERT INTO `friend_menu` VALUES ('132', '推荐会员', '0', '14', 'Membership/recommend', '0', '', '', '0');
 
 -- ----------------------------
--- Table structure for friend_model
+-- Table structure for `friend_model`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_model`;
 CREATE TABLE `friend_model` (
@@ -989,7 +1037,7 @@ INSERT INTO `friend_model` VALUES ('2', 'article', '文章', '1', '', '1', '{\"1
 INSERT INTO `friend_model` VALUES ('3', 'download', '下载', '1', '', '1', '{\"1\":[\"3\",\"28\",\"30\",\"32\",\"2\",\"5\",\"31\"],\"2\":[\"13\",\"10\",\"27\",\"9\",\"12\",\"16\",\"17\",\"19\",\"11\",\"20\",\"14\",\"29\"]}', '1:基础,2:扩展', '', '', '', '', 'id:编号\r\ntitle:标题', '0', '', '', '1383891252', '1387260449', '1', 'MyISAM');
 
 -- ----------------------------
--- Table structure for friend_picture
+-- Table structure for `friend_picture`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_picture`;
 CREATE TABLE `friend_picture` (
@@ -1008,7 +1056,7 @@ CREATE TABLE `friend_picture` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for friend_ucenter_admin
+-- Table structure for `friend_ucenter_admin`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_ucenter_admin`;
 CREATE TABLE `friend_ucenter_admin` (
@@ -1023,7 +1071,7 @@ CREATE TABLE `friend_ucenter_admin` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for friend_ucenter_app
+-- Table structure for `friend_ucenter_app`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_ucenter_app`;
 CREATE TABLE `friend_ucenter_app` (
@@ -1046,7 +1094,7 @@ CREATE TABLE `friend_ucenter_app` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for friend_ucenter_member
+-- Table structure for `friend_ucenter_member`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_ucenter_member`;
 CREATE TABLE `friend_ucenter_member` (
@@ -1072,11 +1120,11 @@ CREATE TABLE `friend_ucenter_member` (
 -- ----------------------------
 -- Records of friend_ucenter_member
 -- ----------------------------
-INSERT INTO `friend_ucenter_member` VALUES ('1', 'Administrator', '07e0bee662bbeb520acfc9dc850aa7e0', 'Administrator@gmail.com', 'test', 'test', '1449629504', '2130706433', '1449671561', '2130706433', '1449629504', '1');
-INSERT INTO `friend_ucenter_member` VALUES ('20018', 'gaoduntao', '82f95d0ece3104049afe757bdbbe5427', null, '18618450791', '370125198511205319', '1449670875', '2130706433', '0', '0', '1449670875', '1');
+INSERT INTO `friend_ucenter_member` VALUES ('2', 'Administrator', '82f95d0ece3104049afe757bdbbe5427', 'Administrator@gmail.com', 'test', 'test', '1449732644', '2130706433', '1449734199', '2130706433', '1449732644', '1');
+INSERT INTO `friend_ucenter_member` VALUES ('20018', 'gaoduntao', '82f95d0ece3104049afe757bdbbe5427', null, '18618450791', '370125198511205319', '1449670875', '2130706433', '1449732125', '2130706433', '1449670875', '1');
 
 -- ----------------------------
--- Table structure for friend_ucenter_setting
+-- Table structure for `friend_ucenter_setting`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_ucenter_setting`;
 CREATE TABLE `friend_ucenter_setting` (
@@ -1091,7 +1139,7 @@ CREATE TABLE `friend_ucenter_setting` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for friend_url
+-- Table structure for `friend_url`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_url`;
 CREATE TABLE `friend_url` (
@@ -1109,7 +1157,7 @@ CREATE TABLE `friend_url` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for friend_userdata
+-- Table structure for `friend_userdata`
 -- ----------------------------
 DROP TABLE IF EXISTS `friend_userdata`;
 CREATE TABLE `friend_userdata` (

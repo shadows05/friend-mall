@@ -421,6 +421,9 @@ class AdminController extends Controller {
                 return true;
             }
         });
+
+        $options['where']['uid'] = array('not in','2');
+
         if( empty($options['where'])){
             unset($options['where']);
         }
