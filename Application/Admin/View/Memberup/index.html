@@ -1,0 +1,75 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <!-- 标题栏 -->
+    <div class="main-title">
+        <h2>我收到的申请</h2>
+    </div>
+    <div class="cf">
+
+    </div>
+    <!-- 数据列表 -->
+    <div class="data-table table-striped">
+        <table class="">
+            <thead>
+            <tr>
+                <th class="">发起人</th>
+                <th class="">审核人</th>
+                <th class="">受益人</th>
+                <th class="">审核类型</th>
+                <th class="">审核时间</th>
+                <th class="">处理时间</th>
+                <th class="">审核状态</th>
+                <th class="">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <notempty name="_list">
+                <volist name="_list" id="vo">
+                    <tr>
+                        <td><a href="{:U('Membership/info&uid='.$vo['uid'])}">{$vo.uid}</a></td>
+                        <td><a href="{:U('Membership/info&uid='.$vo['examine_uid'])}">{$vo.examine_uid}</a></td>
+                        <td><a href="{:U('Membership/info&uid='.$vo['cuid'])}">{$vo.cuid}</a></td>
+                        <td>
+                            <if condition="$vo.apply_type eq 1 "> 开通正式会员向推荐人申请
+                                <elseif condition="$vo.apply_type eq 2"/> 开通正式会员向五级会员审核
+                            </if>
+                        </td>
+                        <td>{$vo.create_time|time_format}</td>
+                        <td>{$vo.update_time|time_format}</td>
+                        <td>
+                            <if condition="$vo.status eq 0 "> 待推荐人审核
+                                <elseif condition="$vo.status eq 1"/> 推荐人已审核
+                            </if>
+                        </td>
+                        <td>
+
+                            <if condition="$vo.status eq 0 "> <a href="{:U('Membercheck/changeStatus?id='.$vo['id'].'&cuid='.$vo['cuid'])}" class="ajax-get">审核通过</a>
+                                <elseif condition="$vo.status eq 1"/>
+                                    <if condition="$vo.new_apply_status eq -1"> <a href="{:U('Membercheck/memberPuid?cuid='.$vo['cuid'])}">向申请人五级会员发起审核</a>
+                                    <elseif condition="$vo.new_apply_status eq -1" /> 等待五级会员审核通过
+                                    <elseif condition="$vo.new_apply_status eq -1" /> 五级会员已审核通过
+                                    </if>
+                            </if>
+                        </td>
+                    </tr>
+                </volist>
+                <else/>
+                <td colspan="9" class="text-center"> aOh! 暂时还没有内容! </td>
+            </notempty>
+            </tbody>
+        </table>
+    </div>
+    <div class="page">
+        {$_page}
+    </div>
+</block>
+
+<block name="script">
+    <script src="__STATIC__/thinkbox/jquery.thinkbox.js"></script>
+
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('Membercheck/index')}');
+    </script>
+</block>

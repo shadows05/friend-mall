@@ -1,0 +1,67 @@
+<extend name="Public/base" />
+
+<block name="body">
+    <!-- 标题栏 -->
+    <div class="main-title">
+        <h2>我收到的升级申请</h2>
+    </div>
+    <div class="cf">
+
+    </div>
+    <!-- 数据列表 -->
+    <div class="data-table table-striped">
+        <table class="">
+            <thead>
+            <tr>
+                <th class="">发起人</th>
+                <th class="">审核人</th>
+                <th class="">申请内容</th>
+                <th class="">审核类型</th>
+                <th class="">审核时间</th>
+                <th class="">处理时间</th>
+                <th class="">审核状态</th>
+                <th class="">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <notempty name="_list">
+                <volist name="_list" id="vo">
+                    <tr>
+                        <td><a href="{:U('Membership/info&uid='.$vo['uid'])}">{$vo.uid}</a></td>
+                        <td><a href="{:U('Membership/info&uid='.$vo['examine_uid'])}">{$vo.examine_uid}</a></td>
+                        <td><a href="{:U('Membership/info&uid='.$vo['cuid'])}">{$vo.apply_content}</a></td>
+                        <td>会员升级</td>
+                        <td>{$vo.create_time|time_format}</td>
+                        <td>{$vo.update_time|time_format}</td>
+                        <td>
+                            <if condition="$vo.status eq 0 "> 待审核人审核
+                                <elseif condition="$vo.status eq 1"/> 审核人已审核
+                            </if>
+                        </td>
+                        <td>
+
+                            <if condition="$vo.status eq 0 "> <a href="{:U('Memberup/changeStatus?id='.$vo['id'].'&cuid='.$vo['cuid'])}" class="ajax-get">审核通过</a>
+                                <elseif condition="$vo.status eq 1"/> 已审核通过
+                            </if>
+                        </td>
+                    </tr>
+                </volist>
+                <else/>
+                <td colspan="9" class="text-center"> aOh! 暂时还没有内容! </td>
+            </notempty>
+            </tbody>
+        </table>
+    </div>
+    <div class="page">
+        {$_page}
+    </div>
+</block>
+
+<block name="script">
+    <script src="__STATIC__/thinkbox/jquery.thinkbox.js"></script>
+
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('Memberup/index')}');
+    </script>
+</block>

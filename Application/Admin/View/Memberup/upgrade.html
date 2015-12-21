@@ -1,0 +1,58 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>我要升级</h2>
+    </div>
+
+    <div class="alert alert-success" role="alert">您当前级别是 : {$userInfo["baseInfo"]["level"]} </div>
+    <if condition="$userInfo.ifCatUpdate eq 1">
+        <div class="alert alert-success" role="alert">下一级将升级: {$userInfo["baseInfo"]["next_level"]} -> {$userInfo["baseInfo"]["update_tips"]}</div>
+        <else/> <div class="alert alert-success" role="alert">下一级将升级: 暂时不可升级</div>
+    </if>
+
+
+    <form action="{:U()}" method="post" class="form-horizontal">
+        <div class="form-item">
+            <label class="item-label">上{$userInfo["baseInfo"]["next_level"]}层{$userInfo["baseInfo"]["next_level"]}级会员ID<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="examine_uid" value="{$userInfo.baseInfo.update_confirm_cust.uid}" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">上{$userInfo["baseInfo"]["next_level"]}层{$userInfo["baseInfo"]["next_level"]}级会员昵称<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="nickname" value="{$userInfo.baseInfo.update_confirm_cust.nickname}" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">上{$userInfo["baseInfo"]["next_level"]}层{$userInfo["baseInfo"]["next_level"]}级会员手机号<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="mobile" value="{$userInfo.baseInfo.update_confirm_cust.mobile}" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">上{$userInfo["baseInfo"]["next_level"]}层{$userInfo["baseInfo"]["next_level"]}级会员微信号<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="webchat" value="{$userInfo.baseInfo.update_confirm_cust.webchat}" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">申请内容<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="apply_conten" value="会员升级申请：由 {$userInfo.baseInfo.level} 升级到 {$userInfo.baseInfo.next_level}"  readonly="readonly">
+            </div>
+        </div>
+        <div class="form-item">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确定申请</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('Memberup/update')}');
+    </script>
+</block>

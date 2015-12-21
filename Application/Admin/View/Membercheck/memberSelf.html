@@ -1,0 +1,46 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>向推荐人发起正式会员审核</h2>
+    </div>
+    <div class="alert alert-warning" role="alert">提示：申请正式会员需要向您的推荐人发放500元微信红包，请保存好微信红包记录.!!!</div>
+    <div class="alert alert-warning" role="alert">提示：发送申请之前，请确保微信红包已发.!!!</div>
+    <form action="{:U()}" method="post" class="form-horizontal">
+        <div class="form-item">
+            <label class="item-label">推荐人ID<span class="check-tips">（<a href="{:U('Membership/info&uid='.$data['uid'])}">推荐人详细信息</a>）</span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="examine_uid" value="{$data.uid}" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">推荐人昵称<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="nickname" value="{$data.nickname}" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">推荐人手机号<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="mobile" value="{$data.mobile}" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">推荐人微信号<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="webchat" value="{$data.webchat}" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-item">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确定申请</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('Membercheck/out')}');
+    </script>
+</block>
