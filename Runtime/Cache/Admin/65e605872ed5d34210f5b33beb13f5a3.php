@@ -9,11 +9,14 @@
     <link rel="stylesheet" type="text/css" href="/friend-mall/Public/Admin/css/module.css">
     <link rel="stylesheet" type="text/css" href="/friend-mall/Public/Admin/css/style.css" media="all">
 	<link rel="stylesheet" type="text/css" href="/friend-mall/Public/Admin/css/<?php echo (C("COLOR_STYLE")); ?>.css" media="all">
+    <link href="/friend-mall/Public/static/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/friend-mall/Public/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
      <!--[if lt IE 9]>
     <script type="text/javascript" src="/friend-mall/Public/static/jquery-1.10.2.min.js"></script>
     <![endif]--><!--[if gte IE 9]><!-->
     <script type="text/javascript" src="/friend-mall/Public/static/jquery-2.0.3.min.js"></script>
     <script type="text/javascript" src="/friend-mall/Public/Admin/js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="/friend-mall/Public/Admin/js/jquery.ui.draggable.min.js"></script>
     <!--<![endif]-->
     
 </head>
@@ -21,7 +24,7 @@
     <!-- 头部 -->
     <div class="header">
         <!-- Logo -->
-        <span class="logo"></span>
+        <span class=""></span>
         <!-- /Logo -->
 
         <!-- 主导航 -->
@@ -29,10 +32,9 @@
             <?php if(is_array($__MENU__["main"])): $i = 0; $__LIST__ = $__MENU__["main"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?><li class="<?php echo ((isset($menu["class"]) && ($menu["class"] !== ""))?($menu["class"]):''); ?>"><a href="<?php echo (u($menu["url"])); ?>"><?php echo ($menu["title"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
         </ul>
         <!-- /主导航 -->
-
         <!-- 用户栏 -->
         <div class="user-bar">
-            <a href="javascript:;" class="user-entrance"><i class="icon-user"></i></a>
+            <a href="javascript:;" class=""><i class="icon-user"></i></a>
             <ul class="nav-list user-menu hidden">
                 <li class="manager">你好，<em title="<?php echo session('user_auth.username');?>"><?php echo session('user_auth.username');?></em></li>
                 <li><a href="<?php echo U('User/updatePassword');?>">修改密码</a></li>
@@ -40,6 +42,7 @@
                 <li><a href="<?php echo U('Public/logout');?>">退出</a></li>
             </ul>
         </div>
+
     </div>
     <!-- /头部 -->
 
@@ -92,9 +95,9 @@
 	<div class="cf">
 		<div class="fl">
             <a class="btn" href="<?php echo U('User/add');?>">新 增</a>
-            <button class="btn ajax-post" url="<?php echo U('User/changeStatus',array('method'=>'resumeUser'));?>" target-form="ids">启 用</button>
+            <!--<button class="btn ajax-post" url="<?php echo U('User/changeStatus',array('method'=>'resumeUser'));?>" target-form="ids">启 用</button>
             <button class="btn ajax-post" url="<?php echo U('User/changeStatus',array('method'=>'forbidUser'));?>" target-form="ids">禁 用</button>
-            <button class="btn ajax-post confirm" url="<?php echo U('User/changeStatus',array('method'=>'deleteUser'));?>" target-form="ids">删 除</button>
+            <button class="btn ajax-post confirm" url="<?php echo U('User/changeStatus',array('method'=>'deleteUser'));?>" target-form="ids">删 除</button>-->
         </div>
 
         <!-- 高级搜索 -->
@@ -113,10 +116,12 @@
 		<th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
 		<th class="">UID</th>
 		<th class="">昵称</th>
-		<th class="">积分</th>
+		<th class="">电话</th>
+		<th class="">微信号</th>
+		<th class="">用户等级</th>
+		<th class="">可用积分</th>
 		<th class="">登录次数</th>
 		<th class="">最后登录时间</th>
-		<th class="">最后登录IP</th>
 		<th class="">状态</th>
 		<th class="">操作</th>
 		</tr>
@@ -126,13 +131,16 @@
             <td><input class="ids" type="checkbox" name="id[]" value="<?php echo ($vo["uid"]); ?>" /></td>
 			<td><?php echo ($vo["uid"]); ?> </td>
 			<td><?php echo ($vo["nickname"]); ?></td>
-			<td><?php echo ($vo["score"]); ?></td>
+			<td><?php echo ($vo["mobile"]); ?></td>
+			<td><?php echo ($vo["webchat"]); ?></td>
+			<td><?php echo ($vo["level"]); ?></td>
+			<td><?php echo ($vo["upoint"]); ?></td>
 			<td><?php echo ($vo["login"]); ?></td>
 			<td><span><?php echo (time_format($vo["last_login_time"])); ?></span></td>
-			<td><span><?php echo long2ip($vo['last_login_ip']);?></span></td>
 			<td><?php echo ($vo["status_text"]); ?></td>
 			<td>
-				<a href="<?php echo U('User/editsuperior&uid='.$vo['uid']);?>">更新用户上级</a>
+				<a href="<?php echo U('User/editlevel&uid='.$vo['uid']);?>">更新用户级别</a>
+				<!--<a href="<?php echo U('User/editsuperior&uid='.$vo['uid']);?>">更新用户上级</a>-->
 				<?php if(($vo["status"]) == "1"): ?><a href="<?php echo U('User/changeStatus?method=forbidUser&id='.$vo['uid']);?>" class="ajax-get">禁用</a>
 				<?php else: ?>
 				<a href="<?php echo U('User/changeStatus?method=resumeUser&id='.$vo['uid']);?>" class="ajax-get">启用</a><?php endif; ?>
@@ -151,8 +159,8 @@
         </div>
         <div class="cont-ft">
             <div class="copyright">
-                <div class="fl">感谢使用<a href="http://www.onethink.cn" target="_blank">OneThink</a>管理平台</div>
-                <div class="fr">V<?php echo (ONETHINK_VERSION); ?></div>
+                <div class="fl">消费创富</div>
+                <div class="fr">© Company 2015</div>
             </div>
         </div>
     </div>

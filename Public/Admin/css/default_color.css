@@ -272,7 +272,7 @@ select {
 
 /* 头部Logo,主导航*/
 .header {
-    background-color: #383838;
+    background-color: rgba(92, 53, 141, 0.52);
 }
 /* 主导航 */
 .main-nav a {
@@ -461,4 +461,19 @@ select {
 
 #login-page img.verifyimg{
 	border-color: #ececec;
+}
+
+.badge {
+	display: inline-block;
+	min-width: 10px;
+	padding: 3px 7px;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 1;
+	color: #FFF;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	background-color: #777;
+	border-radius: 10px;
 }

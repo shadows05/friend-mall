@@ -54,15 +54,29 @@
             </div>
         </div>
         <div class="form-item">
-            <label class="item-label">推荐人编号<span class="check-tips"></span></label>
+            <label class="item-label">推荐人编号<span class="check-tips">（推荐人编号不可写，有系统处理）</span></label>
             <div class="controls">
-                <input type="text" class="text input-large" name="recommended" value="{$data.recommended}">
+                <input type="text" class="text input-large" name="ruid" value="{$data.ruid}" readonly="readonly">
             </div>
         </div>
         <div class="form-item">
-            <label class="item-label">接点人编号<span class="check-tips"></span></label>
+            <label class="item-label">接点人编号<span class="check-tips">（如果是顶层会员，请设置接点人标号为0）</span></label>
             <div class="controls">
-                <input type="text" class="text input-large" name="contacted" value="{$data.contacted}">
+                <if condition="$data.puid gt 0">
+                    <input type="text" class="text input-large" name="puid" value="{$data.puid}" readonly="readonly">
+                <else />
+                    <input type="text" class="text input-large" name="puid" value="{$data.puid}">
+                </if>
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">会员等级<span class="check-tips">（如果是顶层会员，请置会员最高级别9）</span></label>
+            <div class="controls">
+                <if condition="$data.level gt 0">
+                    <input type="text" class="text input-large" name="level" value="{$data.level}">
+                <else />
+                    <input type="text" class="text input-large" name="level" value="{$data.level}"  readonly="readonly">
+                </if>
             </div>
         </div>
         <div class="form-item">

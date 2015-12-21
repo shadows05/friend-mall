@@ -1,10 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<extend name="Public/base"/>
 
-</body>
-</html>
+<block name="body">
+    <div class="main-title">
+        <h2>更新用户等级</h2>
+    </div>
+    <form action="{:U()}" method="post" class="form-horizontal">
+        <div class="form-item">
+            <label class="item-label">用户ID<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-small" name="uid" value="{$_user_info.uid}" readonly="readonly">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">用户等级<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-small" name="level" value="{$_user_info.level}">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('User/index')}');
+    </script>
+</block>

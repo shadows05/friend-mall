@@ -31,7 +31,7 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
-            <a class="brand" href="<?php echo U('index/index');?>">OneThink</a>
+            <a class="brand" href="<?php echo U('index/index');?>">消费创富</a>
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -49,19 +49,20 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding-left:0;padding-right:0"><?php echo get_username();?> <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="<?php echo U('User/profile');?>">修改密码</a></li>
-                                <li><a href="<?php echo U('User/logout');?>">退出</a></li>
+                                <li><a href="<?php echo U('Admin/Membership/index');?>">个人中心</a></li>
+                                <li><a href="<?php echo U('Admin/User/updatePassword');?>">修改密码</a></li>
+                                <li><a href="<?php echo U('Admin/Public/logout');?>">退出</a></li>
                             </ul>
                         </li>
                     </ul>
                 <?php else: ?>
                     <ul class="nav" style="margin-right:0">
                         <li>
-                            <a href="<?php echo U('User/login');?>">登录</a>
+                            <a href="<?php echo U('Admin/Public/login');?>">登录</a>
                         </li>
-                        <li>
+                        <!--<li>
                             <a href="<?php echo U('User/register');?>" style="padding-left:0;padding-right:0">注册</a>
-                        </li>
+                        </li>-->
                     </ul><?php endif; ?>
             </div>
         </div>
@@ -82,14 +83,15 @@
 <div id="main-container" class="container">
     <div class="row">
         
-<!-- 左侧 nav
-================================================== -->
-    <div class="span3 bs-docs-sidebar">
-        <ul class="nav nav-list bs-docs-sidenav">
-            <?php echo W('Category/lists', array(1, true));?>
-        </ul>
-    </div>
-
+        <!-- 左侧 nav
+        ================================================== -->
+            <!--<div class="span3 bs-docs-sidebar">-->
+                <!---->
+                <!--<ul class="nav nav-list bs-docs-sidenav">-->
+                    <!--<?php echo W('Category/lists', array($category['id'], ACTION_NAME == 'index'));?>-->
+                <!--</ul>-->
+            <!--</div>-->
+        
         
     <div class="span9">
         <!-- Contents
@@ -133,7 +135,10 @@
     ================================================== -->
     <footer class="footer">
       <div class="container">
-          <p> 本站由 <strong><a href="http://www.onethink.cn" target="_blank">OneThink</a></strong> 强力驱动</p>
+          <div class="copyright">
+              <div class="fl">消费创富</div>
+              <div class="fr">© Company 2015</div>
+          </div>
       </div>
     </footer>
 

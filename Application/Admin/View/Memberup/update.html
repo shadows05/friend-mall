@@ -2,39 +2,45 @@
 
 <block name="body">
     <div class="main-title">
-        <h2>向五级会员发起正式会员审核</h2>
+        <h2>我要升级</h2>
     </div>
-    <div class="alert alert-warning" role="alert">提示：推荐人收到被推荐人的500员红包后并且通过被推荐人的申请后，需要向被推荐人的上层5级会员发送100元红包并发起对被推荐人的正式审核，只有被推荐人的上层五级会员审核通过之后，被推荐人才可成为正式会员！！</div>
-    <div class="alert alert-warning" role="alert">提示：发送申请之前，请确保微信红包已发.!!!</div>
 
-    <div class="alert alert-success" role="alert"> 被  推  荐  人 : <span><a href="{:U('Membership/info&uid='.$_cuser['uid'])}">{$_cuser["nickname"]}</a></span> </div>
-    <div class="alert alert-success" role="alert">推荐人5级报单会员：<span><a href="{:U('Membership/info&uid='.$_five_user['uid'])}">{$_five_user["nickname"]}</a></span></div>
+    <div class="alert alert-success" role="alert">您当前级别是 : {$userInfo["baseInfo"]["level"]} </div>
+    <if condition="$userInfo.ifCatUpdate eq 1">
+        <div class="alert alert-success" role="alert">下一级将升级: {$userInfo["baseInfo"]["next_level"]} -> {$userInfo["baseInfo"]["update_tips"]}</div>
+        <else/> <div class="alert alert-success" role="alert">下一级将升级: 暂时不可升级</div>
+    </if>
 
 
     <form action="{:U()}" method="post" class="form-horizontal">
         <div class="form-item">
-            <label class="item-label">5级报单会员ID<span class="check-tips"></span></label>
+            <label class="item-label">上{$userInfo["baseInfo"]["next_level"]}层{$userInfo["baseInfo"]["next_level"]}级会员ID<span class="check-tips"></span></label>
             <div class="controls">
-                <input type="text" class="text input-large" name="examine_uid" value="{$_five_user.uid}" readonly="readonly">
-            </div>
-        </div>
-        <input type="hidden" class="text input-large" name="cuid" value="{$_cuser.uid}" readonly="readonly">
-        <div class="form-item">
-            <label class="item-label">5级报单会员昵称<span class="check-tips"></span></label>
-            <div class="controls">
-                <input type="text" class="text input-large" name="nickname" value="{$_five_user.nickname}" readonly="readonly">
+                <input type="text" class="text input-large" name="examine_uid" value="{$userInfo.baseInfo.update_confirm_cust.uid}" readonly="readonly">
             </div>
         </div>
         <div class="form-item">
-            <label class="item-label">5级报单会员手机号<span class="check-tips"></span></label>
+            <label class="item-label">上{$userInfo["baseInfo"]["next_level"]}层{$userInfo["baseInfo"]["next_level"]}级会员昵称<span class="check-tips"></span></label>
             <div class="controls">
-                <input type="text" class="text input-large" name="mobile" value="{$_five_user.mobile}" readonly="readonly">
+                <input type="text" class="text input-large" name="nickname" value="{$userInfo.baseInfo.update_confirm_cust.nickname}" readonly="readonly">
             </div>
         </div>
         <div class="form-item">
-            <label class="item-label">5级报单会员微信号<span class="check-tips"></span></label>
+            <label class="item-label">上{$userInfo["baseInfo"]["next_level"]}层{$userInfo["baseInfo"]["next_level"]}级会员手机号<span class="check-tips"></span></label>
             <div class="controls">
-                <input type="text" class="text input-large" name="webchat" value="{$_five_user.webchat}" readonly="readonly">
+                <input type="text" class="text input-large" name="mobile" value="{$userInfo.baseInfo.update_confirm_cust.mobile}" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">上{$userInfo["baseInfo"]["next_level"]}层{$userInfo["baseInfo"]["next_level"]}级会员微信号<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="webchat" value="{$userInfo.baseInfo.update_confirm_cust.webchat}" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">申请内容<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="apply_conten" value="会员升级申请：由 {$userInfo.baseInfo.level} 升级到 {$userInfo.baseInfo.next_level}"  readonly="readonly">
             </div>
         </div>
         <div class="form-item">
@@ -47,6 +53,6 @@
 <block name="script">
     <script type="text/javascript">
         //导航高亮
-        highlight_subnav('{:U('Membercheck/out')}');
+        highlight_subnav('{:U('Memberup/update')}');
     </script>
 </block>

@@ -9,7 +9,9 @@
 namespace Admin\Model;
 
 
-class MemberPointConsumModel
+use Think\Model;
+
+class MemberPointConsumModel extends Model
 {
 
 }

@@ -200,7 +200,10 @@ class UserController extends AdminController {
         }
     }
 
-    public function add($username = '', $password = '', $repassword = '', $mobile = '', $idcard = '', $realname = '', $webchat = '', $address = '', $recommended = '', $contacted = '', $bdirection = '' ){
+    public function add($username = '', $password = '', $repassword = '', $mobile = '', $idcard = '', $realname = '', $webchat = '', $address = '', $ruid = '', $puid = '', $bdirection = '', $level = '' ){
+
+        R("MemberAdmin/checkUserStatus");
+
         if(IS_POST){
             /* 检测密码 */
             if($password != $repassword){
@@ -215,22 +218,78 @@ class UserController extends AdminController {
             if($address == ''){
                 $this->error('请填写常用地址！');
             }
+
+            // 获取 puid = 0 的用户，必须只能有一个；
+            $top_user = M('Member')->where("puid = 0")->find();
+
+            // 如果 puid > 0 ,则判断是否有puid=0的顶层用户存在，如果没有，则提示，需要先创建顶层用户
+            if(is_null($top_user) &&  $puid > 0){
+                $this->error("系统需要先创建顶层会员，请设置顶层会员的接点人编号为0!");
+            }
+
+            // 如果puid = 0 ，则查找是有已经存在puid=0的顶层会员，如果存在，则提示，顶层会员已经存在，不可再创建顶层用户
+            if(!is_null($top_user) && $puid == 0){
+                $this->error("系统只能创建一个顶层会员，请重新设置顶层会员的接点人!");
+            }
+
+            if($puid == 0 && $level != 9){
+                $this->error("您现在正在创建顶层会员，请设置会员等级为9!");
+            }
+
+            if($level < 0 || $level > 9){
+                $this->error("会员等级请填写0-9!");
+            }
+
+            $user = array(
+                "nickname"      =>          $username,
+                "realname"          =>      $realname,
+                "idcard"        =>          $idcard,
+                "mobile"        =>          $mobile,
+                "webchat"       =>          $webchat,
+                "address"       =>          $address,
+                "ruid"       =>             $ruid,
+                "puid"      =>              $puid,
+                "bdirection"        =>     $bdirection);
+            // 后台创建的会员都是合格会员；需要红包审核通过，直接是合格会员
+            $user["status"] = 1;
+            $user["check_status"] = $ruid == 2 ? 2 : 0;
+            $user["level"] = $level;
+
+            // 获取puid的用户，获取其status and check_status,如果status != 1,提示用户状态不对；
+            // 如果check_status != 2 ,提示用户还不是正式会员，不可发现会员
+            // 获取用户的reaches+1赋值给新的用户 从from获取用的level等级
+            if($puid == 0){
+                $user["reaches"] = 0;
+            }else{
+                // 获取接点人信息
+                $parent_user = M('Member')->where("uid = $puid")->find();
+                if(is_null($parent_user)){
+                    $this->error("您选择的接点人不存在，请重新选择!");
+                }
+                if($parent_user["status"] == 0 || $parent_user["check_status"] == 0){
+                    $this->error("您选择的接点人还不是正式的会员，请重新选择!");
+                }
+                $user["reaches"] = $parent_user["reaches"] + 1;
+
+                if($parent_user["b_left_uid"] != 0 && $parent_user["b_middle_uid"] != 0 & $parent_user["b_right_uid"] != 0){
+                    $this->error("接点会员左中右区会员已满，请重新选择接点会员!");
+                }
+                if($bdirection == 0 && $parent_user["b_left_uid"] != 0){
+                    $this->error("接点会员左区已有会员，请重新选择!");
+                }
+                if($bdirection == 1 && $parent_user["b_middle_uid"] != 0){
+                    $this->error("接点会员中区已有会员，请重新选择!");
+                }
+                if($bdirection == 2 && $parent_user["b_right_uid"] != 0){
+                    $this->error("接点会员右区已有会员，请重新选择!");
+                }
+            }
+
             /* 调用注册接口注册用户 */
             $User   =   new UserApi;
             $uid    =   $User->register($username, $password, $mobile, $idcard);
             if(0 < $uid){ //注册成功
-                $user = array(
-                    "uid"           =>      $uid,
-                    "nickname"      =>     $username,
-                    "realname"          =>      $realname,
-                    "idcard"        =>      $idcard,
-                    "mobile"        =>      $mobile,
-                    "webchat"       =>      $webchat,
-                    "address"       =>      $address,
-                    "recommended"       =>      $recommended,
-                    "contacted"     =>      $contacted,
-                    "bdirection"        =>  $bdirection,
-                    "status"         =>     1);
+                $user["uid"] = $uid;
                 if(!M('Member')->add($user)){
                     $this->error('用户添加失败！');
                 } else {
@@ -240,18 +299,28 @@ class UserController extends AdminController {
                     $AuthGroup->addToGroup($uid,2);
                     //记录行为
                     action_log('add_user', 'member', $uid, UID);
+
+                    D("Member")->updateParentBdirection($puid,$uid,$bdirection);
+
+                    D("MemberSuperior")->initMemberSuperior($puid,$uid,$user["reaches"]);
+
+                    D("MemberRelation")->initMemberRelation($puid,$uid,$user["reaches"],$user["check_status"]);
+
                     // 生成用户的顶层关系网络 网站管理员是可以手动设置的,这里是自动设置
-                    M('MemberSuperior')->add(array("uid" => $uid,"create_time" => NOW_TIME,"update_time"=>NOW_TIME));
-                    $this->success('用户添加成功！',U('index'));
+                    // 生成用户顶层关系
+                    // 生成用户member_relation
+                    //M('MemberSuperior')->add(array("uid" => $uid,"create_time" => NOW_TIME,"update_time"=>NOW_TIME));
+                    $this->success('用户添加成功！',$ruid == 2 ? U('index') : U("Membership/team"));
                 }
             } else { //注册失败，显示错误信息
                 $this->error($this->showRegError($uid));
             }
         } else {
             $this->meta_title = '新增用户';
-            $data['recommended'] = UID;
-            $data['contacted'] = 0;
-            $data['bdirection'] = 1;
+            $data['ruid'] = is_login();
+            $data['puid'] = isset($_GET["puid"])?$_GET["puid"]:0;
+            $data['bdirection'] = isset($_GET["bd"])?$_GET["bd"]:1;
+            $data['level'] = isset($_GET["level"])?$_GET["level"]:1;
             $this->assign('data',$data);
             $this->display();
         }
@@ -267,6 +336,21 @@ class UserController extends AdminController {
             $uid = (int)$_GET['uid'];
             $data = M("MemberSuperior")->where("uid={$uid}")->find();
             $this->assign("user_superior",$data);
+            $this->display();
+        }
+    }
+
+    public function editlevel(){
+        if(IS_POST){
+            $data["uid"] = $_POST["uid"];
+            $data["level"] = $_POST["level"];
+            $data["update_time"] = NOW_TIME;
+            M("Member")->save($data);
+            $this->success('更新成功！',U('index'));
+        }else{
+            $uid = (int)$_GET['uid'];
+            $data = M("Member")->find($uid);
+            $this->assign("_user_info",$data);
             $this->display();
         }
     }

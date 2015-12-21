@@ -2,33 +2,39 @@
 
 <block name="body">
     <div class="main-title">
-        <h2>向推荐人发起正式会员审核</h2>
+        <h2>向五级会员发起正式会员审核</h2>
     </div>
-    <div class="alert alert-warning" role="alert">提示：申请正式会员需要向您的推荐人发放500元微信红包，请保存好微信红包记录.!!!</div>
+    <div class="alert alert-warning" role="alert">提示：推荐人收到被推荐人的500员红包后并且通过被推荐人的申请后，需要向被推荐人的上层5级会员发送100元红包并发起对被推荐人的正式审核，只有被推荐人的上层五级会员审核通过之后，被推荐人才可成为正式会员！！</div>
     <div class="alert alert-warning" role="alert">提示：发送申请之前，请确保微信红包已发.!!!</div>
+
+    <div class="alert alert-success" role="alert"> 被  推  荐  人 : <span><a href="{:U('Membership/info&uid='.$_cuser['uid'])}">{$_cuser["nickname"]}</a></span> </div>
+    <div class="alert alert-success" role="alert">推荐人5级报单会员：<span><a href="{:U('Membership/info&uid='.$_five_user['uid'])}">{$_five_user["nickname"]}</a></span></div>
+
+
     <form action="{:U()}" method="post" class="form-horizontal">
         <div class="form-item">
-            <label class="item-label">推荐人ID<span class="check-tips">（<a href="{:U('Membership/info&uid='.$data['uid'])}">推荐人详细信息</a>）</span></label>
+            <label class="item-label">5级报单会员ID<span class="check-tips"></span></label>
             <div class="controls">
-                <input type="text" class="text input-large" name="examine_uid" value="{$data.uid}" readonly="readonly">
+                <input type="text" class="text input-large" name="examine_uid" value="{$_five_user.uid}" readonly="readonly">
+            </div>
+        </div>
+        <input type="hidden" class="text input-large" name="cuid" value="{$_cuser.uid}" readonly="readonly">
+        <div class="form-item">
+            <label class="item-label">5级报单会员昵称<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="nickname" value="{$_five_user.nickname}" readonly="readonly">
             </div>
         </div>
         <div class="form-item">
-            <label class="item-label">推荐人昵称<span class="check-tips"></span></label>
+            <label class="item-label">5级报单会员手机号<span class="check-tips"></span></label>
             <div class="controls">
-                <input type="text" class="text input-large" name="nickname" value="{$data.nickname}" readonly="readonly">
+                <input type="text" class="text input-large" name="mobile" value="{$_five_user.mobile}" readonly="readonly">
             </div>
         </div>
         <div class="form-item">
-            <label class="item-label">推荐人手机号<span class="check-tips"></span></label>
+            <label class="item-label">5级报单会员微信号<span class="check-tips"></span></label>
             <div class="controls">
-                <input type="text" class="text input-large" name="mobile" value="{$data.mobile}" readonly="readonly">
-            </div>
-        </div>
-        <div class="form-item">
-            <label class="item-label">推荐人微信号<span class="check-tips"></span></label>
-            <div class="controls">
-                <input type="text" class="text input-large" name="webchat" value="{$data.webchat}" readonly="readonly">
+                <input type="text" class="text input-large" name="webchat" value="{$_five_user.webchat}" readonly="readonly">
             </div>
         </div>
         <div class="form-item">

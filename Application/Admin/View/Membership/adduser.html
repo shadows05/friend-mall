@@ -60,15 +60,15 @@
             </div>
         </div>
         <div class="form-item">
-            <label class="item-label">接点人编号<span class="check-tips">（如果是顶层会员，请设置接点人标号为0）</span></label>
+            <label class="item-label">接点人编号<span class="check-tips"></span></label>
             <div class="controls">
-                <input type="text" class="text input-large" name="puid" value="{$data.puid}">
+                <input type="text" class="text input-large" name="puid" value="{$data.puid}" readonly="readonly">
             </div>
         </div>
         <div class="form-item">
-            <label class="item-label">会员等级<span class="check-tips">（如果是顶层会员，请置会员最高级别9）</span></label>
+            <label class="item-label">会员等级<span class="check-tips"></span></label>
             <div class="controls">
-                <input type="text" class="text input-large" name="level" value="{$data.level}">
+                <input type="text" class="text input-large" name="level" value="{$data.level}" readonly="readonly">
             </div>
         </div>
         <div class="form-item">
@@ -82,14 +82,6 @@
 
             </div>
         </div>
-        <!--
-        <div class="form-item">
-            <label class="item-label">邮箱<span class="check-tips">（用户邮箱，用于找回密码等安全操作）</span></label>
-            <div class="controls">
-                <input type="text" class="text input-large" name="email" value="">
-            </div>
-        </div>
-        -->
         <div class="form-item">
             <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
             <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
@@ -100,6 +92,6 @@
 <block name="script">
     <script type="text/javascript">
         //导航高亮
-        highlight_subnav('{:U('User/index')}');
+        highlight_subnav('{:U('Membership/team')}');
     </script>
 </block>

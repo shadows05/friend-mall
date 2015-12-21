@@ -1,10 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<extend name="Public/base" />
 
-</body>
-</html>
+<block name="body">
+    <!-- 标题栏 -->
+    <div class="main-title">
+        <h2>积分消费历史</h2>
+    </div>
+
+    <!-- 数据列表 -->
+    <div class="data-table table-striped">
+        <table class="">
+            <thead>
+            <tr>
+                <th class="">ID</th>
+                <th class="">积分数</th>
+                <th class="">类型</th>
+                <th class="">状态</th>
+                <th class="">获取时间</th>
+                <th class="">确认时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            <notempty name="_point_earn">
+                <volist name="_point_earn" id="vo">
+                    <tr>
+                        <td>{$vo.id} </td>
+                        <td>{$vo.point}</td>
+                        <td>
+                            <if condition="$vo.type eq 1" > 下订单
+                            </if>
+                        </td>
+                        <td>
+                            <if condition="$vo.status eq 0"> 待确认
+                                <elseif condition="$vo.status eq 1" /> 已确认
+                                <elseif condition="$vo.status eq -1" /> 已取消
+                            </if>
+                        </td>
+                        <td>{$vo.create_time|time_format}</td>
+                        <td>{$vo.update_time|time_format}</td>
+                    </tr>
+                </volist>
+                <else/>
+                <td colspan="9" class="text-center"> aOh! 暂时还没有内容! </td>
+            </notempty>
+            </tbody>
+        </table>
+    </div>
+    <div class="page">
+        {$_page}
+    </div>
+</block>
+
+<block name="script">
+    <script src="__STATIC__/thinkbox/jquery.thinkbox.js"></script>
+
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('Memberpoint/index')}');
+    </script>
+</block>

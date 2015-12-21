@@ -18,43 +18,44 @@ class MemberSuperiorModel extends Model
         array('update_time', NOW_TIME, self::MODEL_UPDATE)
     );
 
-    public function initMemberSuperior($puid,$uid,$reaches,$check_status){
+    protected $pk  = 'uid';
+
+    public function initMemberSuperior($puid,$uid,$reaches){
         if($puid==0) return;
         $child_uid = $uid;
-        for($i=$reaches,$j=1;$i--,$j++;$i>0){
-            $data_superior["uid"] = $uid;
+        $data_superior["uid"] = $uid;
+        $j = 1;
+        for($i=$reaches;$i>0,$j<=9;$i--,$j++){
             $parent_uid = M("Member")->where("uid=$child_uid")->getField('puid');
-            if($parent_uid == 0) return;
+            if($parent_uid == 0) break;
             switch ($j)
             {
                 case 1:
-                    $superior = "first_superior"; break;
+                    $data_superior["first_superior"] = $parent_uid;break;
                 case 2:
-                    $superior = "second_superior"; break;
+                    $data_superior["second_superior"] = $parent_uid;break;
                 case 3:
-                    $superior = "third_superior";break;
+                    ;$data_superior["third_superior"] = $parent_uid;break;
                 case 4:
-                    $superior = "fouth_superior"; break;
+                    $data_superior["fouth_superior"] = $parent_uid;break;
                 case 5:
-                    $superior = "fifth_superior"; break;
+                    $data_superior["fifth_superior"] = $parent_uid;break;
                 case 6:
-                    $superior = "sixth_superior"; break;
+                    $data_superior["sixth_superior"] = $parent_uid;break;
                 case 7:
-                    $superior = "seventh_superior"; break;
+                    $data_superior["seventh_superior"] = $parent_uid;break;
                 case 8:
-                    $superior = "eighth_superior"; break;
+                    $data_superior["eighth_superior"] = $parent_uid;break;
                 case 9:
-                    $superior = "ninth_superior"; break;
+                    $data_superior["ninth_superior"] = $parent_uid;break;
                 default:
-                    $superior = "";
+                    break;
             }
-            if($superior !=  ""){
-                $data_superior[$superior] = $parent_uid;
-                $this->save($data_superior);
-            }
-
             $child_uid = $parent_uid;
         }
+        $data_superior["create_time"] = NOW_TIME;
+        $data_superior["update_time"] = NOW_TIME;
+        $this->add($data_superior);
     }
 
 }

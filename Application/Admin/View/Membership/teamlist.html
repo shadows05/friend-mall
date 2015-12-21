@@ -3,7 +3,7 @@
 <block name="body">
     <!-- 标题栏 -->
     <div class="main-title">
-        <h2>我推荐的会员</h2>
+        <h2>我的团队</h2>
     </div>
     <div class="cf">
 
@@ -13,13 +13,12 @@
         <table class="">
             <thead>
             <tr>
-                <th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
                 <th class="">UID</th>
-                <th class="">昵称</th>
-                <th class="">积分</th>
-                <th class="">登录次数</th>
+                <th class="">用户名</th>
+                <th class="">手机号</th>
+                <th class="">微信号</th>
+                <th class="">会员等级</th>
                 <th class="">最后登录时间</th>
-                <th class="">最后登录IP</th>
                 <th class="">状态</th>
                 <th class="">操作</th>
             </tr>
@@ -28,22 +27,22 @@
             <notempty name="_list">
                 <volist name="_list" id="vo">
                     <tr>
-                        <td><input class="ids" type="checkbox" name="id[]" value="{$vo.uid}" /></td>
                         <td>{$vo.uid} </td>
                         <td>{$vo.nickname}</td>
-                        <td>{$vo.score}</td>
-                        <td>{$vo.login}</td>
+                        <td>{$vo.mobile}</td>
+                        <td>{$vo.webchat}</td>
+                        <td>{$vo.level}</td>
                         <td><span>{$vo.last_login_time|time_format}</span></td>
-                        <td><span>{:long2ip($vo['last_login_ip'])}</span></td>
-                        <td>{$vo.status_text}</td>
+                        <!--<td><span>{:long2ip($vo['last_login_ip'])}</span></td>-->
                         <td>
-                            <a href="{:U('User/editsuperior&uid='.$vo['uid'])}">更新用户上级</a>
-                            <eq name="vo.status" value="1">
-                                <a href="{:U('User/changeStatus?method=forbidUser&id='.$vo['uid'])}" class="ajax-get">禁用</a>
-                                <else/>
-                                <a href="{:U('User/changeStatus?method=resumeUser&id='.$vo['uid'])}" class="ajax-get">启用</a>
-                            </eq>
-                            <a href="{:U('AuthManager/group?uid='.$vo['uid'])}" class="confirm ajax-get">删除</a>
+                            <if condition="$vo.check_status eq 0 "> 待推荐人审核
+                            <elseif condition="$vo.check_status eq 1"/> 待5级会员审核
+                            <else /> 已激活
+                            </if>
+                        </td>
+                        <td>
+                            <a href="{:U('Membership/team&uid='.$vo['uid'])}">推荐图谱</a>
+                            <a href="{:U('Membership/info&uid='.$vo['uid'])}">会员资料</a>
                         </td>
                     </tr>
                 </volist>
@@ -83,6 +82,6 @@
             }
         });
         //导航高亮
-        highlight_subnav('{:U('Membership/recommend')}');
+        highlight_subnav('{:U('Membership/teamlist')}');
     </script>
 </block>

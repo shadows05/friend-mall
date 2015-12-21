@@ -31,7 +31,7 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
-            <a class="brand" href="<?php echo U('index/index');?>">OneThink</a>
+            <a class="brand" href="<?php echo U('index/index');?>">消费创富</a>
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -57,11 +57,11 @@
                 <?php else: ?>
                     <ul class="nav" style="margin-right:0">
                         <li>
-                            <a href="<?php echo U('User/login');?>">登录</a>
+                            <a href="<?php echo U('Admin/Public/login');?>">登录</a>
                         </li>
-                        <li>
+                        <!--<li>
                             <a href="<?php echo U('User/register');?>" style="padding-left:0;padding-right:0">注册</a>
-                        </li>
+                        </li>-->
                     </ul><?php endif; ?>
             </div>
         </div>
@@ -85,7 +85,7 @@
         
 <section>
 	<div class="span12">
-        <form class="login-form" action="/friend-mall/index.php?s=/home/user/login.html" method="post">
+        <form class="login-form" action="/friend-mall/index.php?s=/Home/User/login.html" method="post">
           <div class="control-group">
             <label class="control-label" for="inputEmail">用户名</label>
             <div class="controls">
@@ -141,7 +141,10 @@
     ================================================== -->
     <footer class="footer">
       <div class="container">
-          <p> 本站由 <strong><a href="http://www.onethink.cn" target="_blank">OneThink</a></strong> 强力驱动</p>
+          <div class="copyright">
+              <div class="fl">消费创富</div>
+              <div class="fr">© Company 2015</div>
+          </div>
       </div>
     </footer>
 

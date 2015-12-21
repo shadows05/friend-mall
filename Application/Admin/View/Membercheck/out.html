@@ -1,10 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<extend name="Public/base" />
 
-</body>
-</html>
+<block name="body">
+    <!-- 标题栏 -->
+    <div class="main-title">
+        <h2>我发出的申请</h2>
+    </div>
+    <div class="cf">
+
+    </div>
+    <!-- 数据列表 -->
+    <div class="data-table table-striped">
+        <table class="">
+            <thead>
+            <tr>
+                <th class="">发起人</th>
+                <th class="">审核人</th>
+                <th class="">受益人</th>
+                <th class="">审核类型</th>
+                <th class="">审核时间</th>
+                <th class="">处理时间</th>
+                <th class="">审核状态</th>
+            </tr>
+            </thead>
+            <tbody>
+            <notempty name="_list">
+                <volist name="_list" id="vo">
+                    <tr>
+                        <td><a href="{:U('Membership/info&uid='.$vo['uid'])}">{$vo.uid}</a></td>
+                        <td><a href="{:U('Membership/info&uid='.$vo['examine_uid'])}">{$vo.examine_uid}</a></td>
+                        <td><a href="{:U('Membership/info&uid='.$vo['cuid'])}">{$vo.cuid}</a></td>
+                        <td>
+                            <if condition="$vo.apply_type eq 1 "> 开通正式会员向推荐人申请
+                                <elseif condition="$vo.apply_type eq 2"/> 开通正式会员向5级报单会员审核
+                            </if>
+                        </td>
+                        <td>{$vo.create_time|time_format}</td>
+                        <td>{$vo.update_time|time_format}</td>
+                        <td>
+                            <if condition="$vo.status eq 0 ">
+                                <if condition="$vo.apply_type eq 1"> 等待推荐人审核
+                                    <else /> 等待5级报单审核 </if>
+                                <elseif condition="$vo.status eq 1"/>
+                                <if condition="$vo.apply_type eq 1"> 推荐人已审核
+                                <else /> 5级报单会员已审核
+                                </if>
+                            </if>
+                        </td>
+                    </tr>
+                </volist>
+                <else/>
+                <td colspan="9" class="text-center"> aOh! 暂时还没有内容! </td>
+            </notempty>
+            </tbody>
+        </table>
+    </div>
+    <div class="page">
+        {$_page}
+    </div>
+</block>
+
+<block name="script">
+    <script src="__STATIC__/thinkbox/jquery.thinkbox.js"></script>
+
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('Membercheck/out')}');
+    </script>
+</block>

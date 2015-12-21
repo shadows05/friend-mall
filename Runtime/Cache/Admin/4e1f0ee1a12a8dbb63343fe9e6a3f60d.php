@@ -9,11 +9,14 @@
     <link rel="stylesheet" type="text/css" href="/friend-mall/Public/Admin/css/module.css">
     <link rel="stylesheet" type="text/css" href="/friend-mall/Public/Admin/css/style.css" media="all">
 	<link rel="stylesheet" type="text/css" href="/friend-mall/Public/Admin/css/<?php echo (C("COLOR_STYLE")); ?>.css" media="all">
+    <link href="/friend-mall/Public/static/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/friend-mall/Public/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
      <!--[if lt IE 9]>
     <script type="text/javascript" src="/friend-mall/Public/static/jquery-1.10.2.min.js"></script>
     <![endif]--><!--[if gte IE 9]><!-->
     <script type="text/javascript" src="/friend-mall/Public/static/jquery-2.0.3.min.js"></script>
     <script type="text/javascript" src="/friend-mall/Public/Admin/js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="/friend-mall/Public/Admin/js/jquery.ui.draggable.min.js"></script>
     <!--<![endif]-->
     
 </head>
@@ -29,10 +32,9 @@
             <?php if(is_array($__MENU__["main"])): $i = 0; $__LIST__ = $__MENU__["main"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?><li class="<?php echo ((isset($menu["class"]) && ($menu["class"] !== ""))?($menu["class"]):''); ?>"><a href="<?php echo (u($menu["url"])); ?>"><?php echo ($menu["title"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
         </ul>
         <!-- /主导航 -->
-
         <!-- 用户栏 -->
         <div class="user-bar">
-            <a href="javascript:;" class="user-entrance"><i class="icon-user"></i></a>
+            <a href="javascript:;" class=""><i class="icon-user"></i></a>
             <ul class="nav-list user-menu hidden">
                 <li class="manager">你好，<em title="<?php echo session('user_auth.username');?>"><?php echo session('user_auth.username');?></em></li>
                 <li><a href="<?php echo U('User/updatePassword');?>">修改密码</a></li>
@@ -40,6 +42,7 @@
                 <li><a href="<?php echo U('Public/logout');?>">退出</a></li>
             </ul>
         </div>
+
     </div>
     <!-- /头部 -->
 
@@ -138,15 +141,25 @@
             </div>
         </div>
         <div class="form-item">
-            <label class="item-label">推荐人编号<span class="check-tips"></span></label>
+            <label class="item-label">推荐人编号<span class="check-tips">（推荐人编号不可写，有系统处理）</span></label>
             <div class="controls">
-                <input type="text" class="text input-large" name="recommended" value="<?php echo ($data["recommended"]); ?>">
+                <input type="text" class="text input-large" name="ruid" value="<?php echo ($data["ruid"]); ?>" readonly="readonly">
             </div>
         </div>
         <div class="form-item">
-            <label class="item-label">接点人编号<span class="check-tips"></span></label>
+            <label class="item-label">接点人编号<span class="check-tips">（如果是顶层会员，请设置接点人标号为0）</span></label>
             <div class="controls">
-                <input type="text" class="text input-large" name="contacted" value="<?php echo ($data["contacted"]); ?>">
+                <?php if($data["puid"] > 0): ?><input type="text" class="text input-large" name="puid" value="<?php echo ($data["puid"]); ?>" readonly="readonly">
+                <?php else: ?>
+                    <input type="text" class="text input-large" name="puid" value="<?php echo ($data["puid"]); ?>"><?php endif; ?>
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">会员等级<span class="check-tips">（如果是顶层会员，请置会员最高级别9）</span></label>
+            <div class="controls">
+                <?php if($data["level"] > 0): ?><input type="text" class="text input-large" name="level" value="<?php echo ($data["level"]); ?>">
+                <?php else: ?>
+                    <input type="text" class="text input-large" name="level" value="<?php echo ($data["level"]); ?>"  readonly="readonly"><?php endif; ?>
             </div>
         </div>
         <div class="form-item">

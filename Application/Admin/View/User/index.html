@@ -8,9 +8,9 @@
 	<div class="cf">
 		<div class="fl">
             <a class="btn" href="{:U('User/add')}">新 增</a>
-            <button class="btn ajax-post" url="{:U('User/changeStatus',array('method'=>'resumeUser'))}" target-form="ids">启 用</button>
+            <!--<button class="btn ajax-post" url="{:U('User/changeStatus',array('method'=>'resumeUser'))}" target-form="ids">启 用</button>
             <button class="btn ajax-post" url="{:U('User/changeStatus',array('method'=>'forbidUser'))}" target-form="ids">禁 用</button>
-            <button class="btn ajax-post confirm" url="{:U('User/changeStatus',array('method'=>'deleteUser'))}" target-form="ids">删 除</button>
+            <button class="btn ajax-post confirm" url="{:U('User/changeStatus',array('method'=>'deleteUser'))}" target-form="ids">删 除</button>-->
         </div>
 
         <!-- 高级搜索 -->
@@ -29,10 +29,12 @@
 		<th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
 		<th class="">UID</th>
 		<th class="">昵称</th>
-		<th class="">积分</th>
+		<th class="">电话</th>
+		<th class="">微信号</th>
+		<th class="">用户等级</th>
+		<th class="">可用积分</th>
 		<th class="">登录次数</th>
 		<th class="">最后登录时间</th>
-		<th class="">最后登录IP</th>
 		<th class="">状态</th>
 		<th class="">操作</th>
 		</tr>
@@ -44,13 +46,16 @@
             <td><input class="ids" type="checkbox" name="id[]" value="{$vo.uid}" /></td>
 			<td>{$vo.uid} </td>
 			<td>{$vo.nickname}</td>
-			<td>{$vo.score}</td>
+			<td>{$vo.mobile}</td>
+			<td>{$vo.webchat}</td>
+			<td>{$vo.level}</td>
+			<td>{$vo.upoint}</td>
 			<td>{$vo.login}</td>
 			<td><span>{$vo.last_login_time|time_format}</span></td>
-			<td><span>{:long2ip($vo['last_login_ip'])}</span></td>
 			<td>{$vo.status_text}</td>
 			<td>
-				<a href="{:U('User/editsuperior&uid='.$vo['uid'])}">更新用户上级</a>
+				<a href="{:U('User/editlevel&uid='.$vo['uid'])}">更新用户级别</a>
+				<!--<a href="{:U('User/editsuperior&uid='.$vo['uid'])}">更新用户上级</a>-->
 				<eq name="vo.status" value="1">
 				<a href="{:U('User/changeStatus?method=forbidUser&id='.$vo['uid'])}" class="ajax-get">禁用</a>
 				<else/>

@@ -9,7 +9,20 @@
 namespace Admin\Controller;
 
 
-class MemberpointController
+class MemberpointController extends MemberAdminController
 {
 
+    // 积分获取列表
+    public function index(){
+        $list = D("MemberPointEarn")->where("uid = " . is_login())->select();
+        $this->assign("_point_earn", $list);
+        $this->display();
+    }
+
+    // 积分消费列表
+    public function consum(){
+        $list = D("MemberPointConsum")->where("uid = " . is_login())->select();
+        $this->assign("_point_consum", $list);
+        $this->display();
+    }
 }

@@ -11,7 +11,7 @@ namespace Admin\Model;
 
 use Think\Model;
 
-class MemberApply extends  Model
+class MemberApplyModel extends  Model
 {
     protected $pk  =  array("id");
 

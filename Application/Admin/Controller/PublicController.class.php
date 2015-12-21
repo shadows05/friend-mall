@@ -36,9 +36,9 @@ class PublicController extends \Think\Controller {
                 if($Member->login($uid)){ //登录用户
                     //TODO:跳转到登录前页面
                     if($uid == 2){
-                        $this->success('登录成功！', U('Index/index'));
+                        $this->success('登录成功！', U('User/index'));
                     }else{
-                        $this->success('登录成功！', U('Membership/index'));
+                        $this->success('登录成功！', U('Home/Index/index'));
                     }
 
                 } else {
@@ -75,7 +75,7 @@ class PublicController extends \Think\Controller {
         if(is_login()){
             D('Member')->logout();
             session('[destroy]');
-            $this->success('退出成功！', U('login'));
+            $this->success('退出成功！', U('Home/Index/index'));
         } else {
             $this->redirect('login');
         }

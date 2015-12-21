@@ -3,7 +3,7 @@
 <block name="body">
     <!-- 标题栏 -->
     <div class="main-title">
-        <h2>我收到的升级申请</h2>
+        <h2>我发出的升级申请</h2>
     </div>
     <div class="cf">
 
@@ -20,7 +20,6 @@
                 <th class="">审核时间</th>
                 <th class="">处理时间</th>
                 <th class="">审核状态</th>
-                <th class="">操作</th>
             </tr>
             </thead>
             <tbody>
@@ -29,7 +28,7 @@
                     <tr>
                         <td><a href="{:U('Membership/info&uid='.$vo['uid'])}">{$vo.uid}</a></td>
                         <td><a href="{:U('Membership/info&uid='.$vo['examine_uid'])}">{$vo.examine_uid}</a></td>
-                        <td><a href="{:U('Membership/info&uid='.$vo['cuid'])}">{$vo.apply_content}</a></td>
+                        <td>{$vo.apply_conten}</td>
                         <td>会员升级</td>
                         <td>{$vo.create_time|time_format}</td>
                         <td>{$vo.update_time|time_format}</td>
@@ -38,12 +37,7 @@
                                 <elseif condition="$vo.status eq 1"/> 审核人已审核
                             </if>
                         </td>
-                        <td>
 
-                            <if condition="$vo.status eq 0 "> <a href="{:U('Memberup/changeStatus?id='.$vo['id'].'&cuid='.$vo['cuid'])}" class="ajax-get">审核通过</a>
-                                <elseif condition="$vo.status eq 1"/> 已审核通过
-                            </if>
-                        </td>
                     </tr>
                 </volist>
                 <else/>
@@ -62,6 +56,6 @@
 
     <script type="text/javascript">
         //导航高亮
-        highlight_subnav('{:U('Memberup/index')}');
+        highlight_subnav('{:U('Memberup/out')}');
     </script>
 </block>

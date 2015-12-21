@@ -1,38 +1,158 @@
-<extend name="Public/base" />
+<extend name="Public/base"/>
+
+<block name="sidebar"></block>
+
+<block name="style">
+    <style>
+        body{padding: 0}
+    </style>
+</block>
 
 <block name="body">
-    <!-- 标题栏 -->
-    <div class="main-title">
-        <h2>用户列表</h2>
-    </div>
+    <!-- 主体 -->
+    <div id="indexMain" class="index-main">
+        <div class="container-span">
 
+            <div class="container-span">
+                <div class="container-span top-columns cf">
+                    <dl class="show-num-mod">
+                        <dt><i class="count-icon user-count-icon"></i></dt>
+                        <dd>
+                            <strong>{$userInfo["statistic"]["recommendCount"]}</strong>
+                            <span>推荐用户数</span>
+                        </dd>
+                    </dl>
+                    <dl class="show-num-mod">
+                        <dt><i class="count-icon user-count-icon"></i></dt>
+                        <dd>
+                            <strong>{$userInfo["statistic"]["teamCount"]}</strong>
+                            <span>团队用户数</span>
+                        </dd>
+                    </dl>
+                    <dl class="show-num-mod">
+                        <dt><i class="count-icon user-action-icon"></i></dt>
+                        <dd>
+                            <strong>{$userInfo["baseInfo"]["level"]}</strong>
+                            <span>会员等级</span>
+                        </dd>
+                    </dl>
+                    <dl class="show-num-mod">
+                        <dt><i class="count-icon user-action-icon"></i></dt>
+                        <dd>
+                            <strong>{$userInfo["baseInfo"]["upoint"]}</strong>
+                            <span>可用积分</span>
+                        </dd>
+                    </dl>
+                </div>
+                    <div class="span2">
+                        <div class="columns-mod">
+                            <div class="hd cf">
+                                <h5>基本信息</h5>
+                                <div class="title-opt">
+                                </div>
+                            </div>
+                            <div class="bd">
+                                <div class="sys-info">
+                                    <table>
+                                        <tbody>
+                                        <tr>
+                                            <th>昵称</th>
+                                            <td>{$userInfo["baseInfo"]["nickname"]}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>手机号</th>
+                                            <td>{$userInfo["baseInfo"]["mobile"]}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>身份证号</th>
+                                            <td>{$userInfo["baseInfo"]["idcard"]}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>微信号</th>
+                                            <td>{$userInfo["baseInfo"]["webchat"]}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>注册时间</th>
+                                            <td>{$userInfo["baseInfo"]["reg_time"]|time_format}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>最后登录时间</th>
+                                            <td>{$userInfo["baseInfo"]["last_login_time"]|time_format}</td>
+                                        </tr>
+                                        </tbody></table>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                    <div class="span2">
+                        <div class="columns-mod">
+                        <div class="hd cf alert alert-warning">
+                            <h5>待处理事项</h5>
+                            <div class="title-opt">
+                            </div>
+                        </div>
+                        <div class="bd">
+                            <div class="sys-info">
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <if condition="$_cust_confirm_status eq 1">
+                                            <th class="alert alert-warning">非正式会员</th>
+                                            <td><a href="{:U('Membercheck/memberSelf')}">请向推荐人申请</a></td>
+                                        <elseif condition="$_cust_confirm_status eq 2" />
+                                            <th class="alert alert-warning">非正式会员</th>
+                                            <td><a href="{:U('Membercheck/out')}">已经向推荐人发送红包，等待审核</a></td>
+                                        <elseif condition="$_cust_confirm_status eq 3" />
+                                            <th class="alert alert-warning">非正式会员</th>
+                                            <td><a href="{:U('Membercheck/out')}">已通过推荐人的审核，耐心等待5级报单会员的审核</a></td>
+                                         <else />
+                                            <th class="alert alert-warning">正式会员</th>
+                                            <td><a href="{:U('Membership/team')}">查看团队信息</a></td>
+                                        </if>
+                                    </tr>
+                                    <tr>
+                                        <th class="alert alert-warning">是否可升级</th>
+                                        <td>
+                                            <if condition="$userInfo['ifCatUpdate'] eq 0 "> 暂时不可升级
+                                            <else />  <a href="{:U('Memberup/memberup')}">我要升级</a>
+                                            </if>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="alert alert-warning">推荐会员未成为正式会员数</th>
+                                        <td>  <a href="{:U('Membercheck/index')}">{$userInfo["unconfirmRecommendUserCount"]}</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="alert alert-warning">未审核正式会员请求</th>
+                                        <td>  <a href="{:U('Membercheck/index')}">{$userInfo["unsolvedApplyCount"]}</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="alert alert-warning">未审核会员升级请求</th>
+                                        <td>  <a href="{:U('Memberup/index')}">{$userInfo["unsolvedUpdateApplyCount"]}</a></td>
+                                    </tr>
+                                    </tbody></table>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+
+        </div>
+    </div>
 </block>
 
 <block name="script">
-    <script src="__STATIC__/thinkbox/jquery.thinkbox.js"></script>
-
     <script type="text/javascript">
-        //搜索功能
-        $("#search").click(function(){
-            var url = $(this).attr('url');
-            var query  = $('.search-form').find('input').serialize();
-            query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
-            query = query.replace(/^&/g,'');
-            if( url.indexOf('?')>0 ){
-                url += '&' + query;
-            }else{
-                url += '?' + query;
-            }
-            window.location.href = url;
-        });
-        //回车搜索
-        $(".search-input").keyup(function(e){
-            if(e.keyCode === 13){
-                $("#search").click();
-                return false;
-            }
-        });
-        //导航高亮
-        highlight_subnav('{:U('Membership/index')}');
+        /* 插件块关闭操作 */
+        $(".title-opt .wm-slide").each(function(){
+            $(this).click(function(){
+                $(this).closest(".columns-mod").find(".bd").toggle();
+                $(this).find("i").toggleClass("mod-up");
+            });
+        })
+        $(function(){
+            // $('#main').attr({'id': 'indexMain','class': 'index-main'});
+            $('.sidebar').remove();
+        })
     </script>
 </block>

@@ -9,11 +9,14 @@
     <link rel="stylesheet" type="text/css" href="__CSS__/module.css">
     <link rel="stylesheet" type="text/css" href="__CSS__/style.css" media="all">
 	<link rel="stylesheet" type="text/css" href="__CSS__/{$Think.config.COLOR_STYLE}.css" media="all">
+    <link href="__STATIC__/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="__STATIC__/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
      <!--[if lt IE 9]>
     <script type="text/javascript" src="__STATIC__/jquery-1.10.2.min.js"></script>
     <![endif]--><!--[if gte IE 9]><!-->
     <script type="text/javascript" src="__STATIC__/jquery-2.0.3.min.js"></script>
     <script type="text/javascript" src="__JS__/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="__JS__/jquery.ui.draggable.min.js"></script>
     <!--<![endif]-->
     <block name="style"></block>
 </head>
@@ -21,7 +24,7 @@
     <!-- 头部 -->
     <div class="header">
         <!-- Logo -->
-        <span class="logo"></span>
+        <span class=""></span>
         <!-- /Logo -->
 
         <!-- 主导航 -->
@@ -31,10 +34,9 @@
             </volist>
         </ul>
         <!-- /主导航 -->
-
         <!-- 用户栏 -->
         <div class="user-bar">
-            <a href="javascript:;" class="user-entrance"><i class="icon-user"></i></a>
+            <a href="javascript:;" class=""><i class="icon-user"></i></a>
             <ul class="nav-list user-menu hidden">
                 <li class="manager">你好，<em title="{:session('user_auth.username')}">{:session('user_auth.username')}</em></li>
                 <li><a href="{:U('User/updatePassword')}">修改密码</a></li>
@@ -42,6 +44,7 @@
                 <li><a href="{:U('Public/logout')}">退出</a></li>
             </ul>
         </div>
+
     </div>
     <!-- /头部 -->
 
@@ -104,8 +107,8 @@
         </div>
         <div class="cont-ft">
             <div class="copyright">
-                <div class="fl">感谢使用<a href="http://www.onethink.cn" target="_blank">OneThink</a>管理平台</div>
-                <div class="fr">V{$Think.const.ONETHINK_VERSION}</div>
+                <div class="fl">消费创富</div>
+                <div class="fr">© Company 2015</div>
             </div>
         </div>
     </div>

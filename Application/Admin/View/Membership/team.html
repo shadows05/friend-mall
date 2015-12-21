@@ -1,10 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<extend name="Public/base_structure" />
 
-</body>
-</html>
+<block name="body">
+
+    <div class="strt-wrap" id="strtWrap">
+        <div class="strt-block">
+
+            {$structure}
+
+        </div>
+    </div>
+
+</block>
+
+<block name="script">
+    <script src="__STATIC__/thinkbox/jquery.thinkbox.js"></script>
+
+    <script type="text/javascript">
+        $(function(){
+            var strtBlocks=$("div.strt-block");
+            strtBlocks.each(function(n){
+                var childs=$(this).children();
+                var w=(childs.last().width() - childs.first().width())/4;
+                if(w>0){
+                    $(this).css("margin-left",w)
+                }else{
+                    $(this).css("padding-right",-w*2);
+                }
+            });
+            var strtWrap=$("#strtWrap");
+            strtWrap.width(strtWrap.children().width());
+            strtWrap.draggable({
+                cursor:"move",
+                opacity:0.5
+            });
+        });
+        //搜索功能
+        $("#search").click(function(){
+            var url = $(this).attr('url');
+            var query  = $('.search-form').find('input').serialize();
+            query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
+            query = query.replace(/^&/g,'');
+            if( url.indexOf('?')>0 ){
+                url += '&' + query;
+            }else{
+                url += '?' + query;
+            }
+            window.location.href = url;
+        });
+        //回车搜索
+        $(".search-input").keyup(function(e){
+            if(e.keyCode === 13){
+                $("#search").click();
+                return false;
+            }
+        });
+        //导航高亮
+        highlight_subnav('{:U('Membership/team')}');
+    </script>
+</block>

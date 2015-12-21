@@ -422,7 +422,7 @@ class AdminController extends Controller {
             }
         });
 
-        $options['where']['uid'] = array('not in','2');
+        //$options['where']['uid'] = array('not in','2');
 
         if( empty($options['where'])){
             unset($options['where']);

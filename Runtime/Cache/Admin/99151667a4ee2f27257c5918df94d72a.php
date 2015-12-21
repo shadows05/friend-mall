@@ -9,11 +9,14 @@
     <link rel="stylesheet" type="text/css" href="/friend-mall/Public/Admin/css/module.css">
     <link rel="stylesheet" type="text/css" href="/friend-mall/Public/Admin/css/style.css" media="all">
 	<link rel="stylesheet" type="text/css" href="/friend-mall/Public/Admin/css/<?php echo (C("COLOR_STYLE")); ?>.css" media="all">
+    <link href="/friend-mall/Public/static/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/friend-mall/Public/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
      <!--[if lt IE 9]>
     <script type="text/javascript" src="/friend-mall/Public/static/jquery-1.10.2.min.js"></script>
     <![endif]--><!--[if gte IE 9]><!-->
     <script type="text/javascript" src="/friend-mall/Public/static/jquery-2.0.3.min.js"></script>
     <script type="text/javascript" src="/friend-mall/Public/Admin/js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="/friend-mall/Public/Admin/js/jquery.ui.draggable.min.js"></script>
     <!--<![endif]-->
     
 </head>
@@ -29,10 +32,9 @@
             <?php if(is_array($__MENU__["main"])): $i = 0; $__LIST__ = $__MENU__["main"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?><li class="<?php echo ((isset($menu["class"]) && ($menu["class"] !== ""))?($menu["class"]):''); ?>"><a href="<?php echo (u($menu["url"])); ?>"><?php echo ($menu["title"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
         </ul>
         <!-- /主导航 -->
-
         <!-- 用户栏 -->
         <div class="user-bar">
-            <a href="javascript:;" class="user-entrance"><i class="icon-user"></i></a>
+            <a href="javascript:;" class=""><i class="icon-user"></i></a>
             <ul class="nav-list user-menu hidden">
                 <li class="manager">你好，<em title="<?php echo session('user_auth.username');?>"><?php echo session('user_auth.username');?></em></li>
                 <li><a href="<?php echo U('User/updatePassword');?>">修改密码</a></li>
@@ -40,6 +42,7 @@
                 <li><a href="<?php echo U('Public/logout');?>">退出</a></li>
             </ul>
         </div>
+
     </div>
     <!-- /头部 -->
 
@@ -121,8 +124,8 @@
         </div>
         <div class="cont-ft">
             <div class="copyright">
-                <div class="fl">感谢使用<a href="http://www.onethink.cn" target="_blank">OneThink</a>管理平台</div>
-                <div class="fr">V<?php echo (ONETHINK_VERSION); ?></div>
+                <div class="fl">消费创富</div>
+                <div class="fr">© Company 2015</div>
             </div>
         </div>
     </div>

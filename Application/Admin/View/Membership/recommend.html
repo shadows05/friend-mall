@@ -1,10 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<extend name="Public/base" />
 
-</body>
-</html>
+<block name="body">
+    <!-- 标题栏 -->
+    <div class="main-title">
+        <h2>我推荐的会员</h2>
+    </div>
+    <div class="cf">
+
+    </div>
+    <!-- 数据列表 -->
+    <div class="data-table table-striped">
+        <table class="">
+            <thead>
+            <tr>
+                <th class="">UID</th>
+                <th class="">用户名</th>
+                <th class="">手机号</th>
+                <th class="">微信号</th>
+                <th class="">会员等级</th>
+                <th class="">最后登录时间</th>
+                <th class="">状态</th>
+                <th class="">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <notempty name="_list">
+                <volist name="_list" id="vo">
+                    <tr>
+                        <td>{$vo.uid} </td>
+                        <td>{$vo.nickname}</td>
+                        <td>{$vo.mobile}</td>
+                        <td>{$vo.webchat}</td>
+                        <td>{$vo.level}</td>
+                        <td><span>{$vo.last_login_time|time_format}</span></td>
+                        <!--<td><span>{:long2ip($vo['last_login_ip'])}</span></td>-->
+                        <td>
+                            <if condition="$vo.check_status eq 0 "> 待推荐人审核
+                            <elseif condition="$vo.check_status eq 1"/> 待5级会员审核
+                            <else /> 已激活
+                            </if>
+                        </td>
+                        <td>
+                            <a href="{:U('Membership/team&uid='.$vo['uid'])}">推荐图谱</a>
+                            <a href="{:U('Membership/info&uid='.$vo['uid'])}">会员资料</a>
+                        </td>
+                    </tr>
+                </volist>
+                <else/>
+                <td colspan="9" class="text-center"> aOh! 暂时还没有内容! </td>
+            </notempty>
+            </tbody>
+        </table>
+    </div>
+    <div class="page">
+        {$_page}
+    </div>
+</block>
+
+<block name="script">
+    <script src="__STATIC__/thinkbox/jquery.thinkbox.js"></script>
+
+    <script type="text/javascript">
+        //搜索功能
+        $("#search").click(function(){
+            var url = $(this).attr('url');
+            var query  = $('.search-form').find('input').serialize();
+            query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
+            query = query.replace(/^&/g,'');
+            if( url.indexOf('?')>0 ){
+                url += '&' + query;
+            }else{
+                url += '?' + query;
+            }
+            window.location.href = url;
+        });
+        //回车搜索
+        $(".search-input").keyup(function(e){
+            if(e.keyCode === 13){
+                $("#search").click();
+                return false;
+            }
+        });
+        //导航高亮
+        highlight_subnav('{:U('Membership/recommend')}');
+    </script>
+</block>

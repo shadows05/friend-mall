@@ -186,13 +186,13 @@
 		</volist>
 
 		<div class="form-item cf">
-			<button class="btn submit-btn ajax-post hidden" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+			<button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
 			<a class="btn btn-return" href="{:U('article/index?cate_id='.$cate_id)}">返 回</a>
-			<if condition="C('OPEN_DRAFTBOX') and (ACTION_NAME eq 'add' or $info['status'] eq 3)">
-			<button class="btn save-btn" url="{:U('article/autoSave')}" target-form="form-horizontal" id="autoSave">
-				存草稿
-			</button>
-			</if>
+			<!--<if condition="C('OPEN_DRAFTBOX') and (ACTION_NAME eq 'add' or $info['status'] eq 3)">-->
+			<!--<button class="btn save-btn" url="{:U('article/autoSave')}" target-form="form-horizontal" id="autoSave">-->
+				<!--存草稿-->
+			<!--</button>-->
+			<!--</if>-->
 			<input type="hidden" name="id" value="{$info.id|default=''}"/>
 			<input type="hidden" name="pid" value="{$info.pid|default=''}"/>
 			<input type="hidden" name="model_id" value="{$info.model_id|default=''}"/>
